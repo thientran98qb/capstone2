@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Model\Category;
 use Illuminate\Support\Str;
+use App\Components\Recusive;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
@@ -23,8 +25,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = $this->category->all();
-        return view('admin.categories.index',compact('categories'));
+        $categories = $this->category->paginate(10);
+        $recusivee = new Recusive($categories);
+        $tableRecusive = $recusivee->recusiveCategoryIndex();
+        return view('admin.categories.index',compact('categories','tableRecusive'));
     }
 
     /**
@@ -34,7 +38,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.add');
+        $data = $this->category->all();
+        $recusive = new Recusive($data);
+        $htmlOption = $recusive->recusiveCategory('');
+        return view('admin.categories.add',compact('htmlOption'));
     }
 
     /**
@@ -46,12 +53,14 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $data = $request->except(['_token']);
+        $dataParentid = (empty($data['parent_id'])) ? 0 : $data['parent_id'];
         if(!empty($data)){
             $this->category->category_name = $data["category_name"];
             $this->category->slug = Str::slug($data['category_name']);
-            $this->category->parent_id = $data['parent_id'];
+            $this->category->parent_id = $dataParentid;
         }
         $this->category->save();
+        toast('Your Category as been submited!','success');
         return redirect()->route('admin.category.index');
     }
 
@@ -65,7 +74,12 @@ class CategoryController extends Controller
     {
         //
     }
-
+    public function getCategory($parent_id){
+        $data = $this->category->all();
+        $recusive = new Recusive($data);
+        $htmlOption = $recusive->recusiveCategory($parent_id);
+        return $htmlOption;
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -74,7 +88,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $itemCategory = $this->category->findOrFail($id);
+        $htmlOptions = $this->getCategory($itemCategory['parent_id']);
+        return view('admin.categories.edit',compact('itemCategory','htmlOptions'));
     }
 
     /**
@@ -84,9 +100,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        //
+        $itemCategory = $this->category->findOrFail($id);
+        $data =  [
+            'category_name' => $request->category_name,
+            'parent_id' => $request->parent_id
+        ];
+        $itemCategory->update($data);
+        toast('Your Category as been updated!','success');
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -97,6 +120,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->category->findOrFail($id)->delete();
+        toast('Your Category as been deleted!','success');
+        return redirect()->route('admin.category.index');
     }
 }

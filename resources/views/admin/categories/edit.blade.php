@@ -4,32 +4,31 @@
 @section('content')
 <div class="content-wrapper">
 
-  @include('admin.partials.content_header',['namePage'=>'Category','childPage'=>'Add Category'])
+  @include('admin.partials.content_header',['namePage'=>'Category','childPage'=>'Edit Category'])
   <!-- Main content -->
   <div class="content">
     <div class="container-fluid">
       <div class="row ">
           <div class="col">
-            <form action="{{route('admin.category.store')}}" method="post">
+            <form action="{{route('admin.category.update',$itemCategory->id)}}" method="post">
+                @method('PUT')
               @csrf
                 <div class="form m-3">
                     <div class="form-group">
                         <label for="">Category name</label>
-                        <input type="text" placeholder="Ten danh muc" name="category_name" value="{{ old('category_name') }}" class="form-control col-md-4">
-                        @error('category_name')
-                            <div class="alert col-sm-3 alert-danger">{{ $message }}</div>
-                        @enderror
+                        <input type="text" name="category_name" value="{{ $itemCategory['category_name'] }}" class="form-control col-md-4">
                     </div>
                     <div class="form-group">
                         <label for="">Parent category</label>
                         <select name="parent_id" id="" class="form-control col-md-4">
-                            <option selected disabled>Chon danh muc cha</option>
-                            <option value="0">Root</option>
-                            {!! $htmlOption !!}
+                           @if ($itemCategory['parent_id'] == 0)
+                                <option selected value="0">Root</option>
+                           @endif
+                            {!! $htmlOptions !!}
                         </select>
                     </div>
                     <div class="mt-4">
-                        <input type="submit" value="Add Category" class="btn btn-warning">
+                        <input type="submit" value="Edit Category" class="btn btn-warning">
                     </div>
                 </div>
             </form>

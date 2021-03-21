@@ -15,7 +15,6 @@
     @include('admin.partials.navbar')
 
     @include('admin.partials.header')
-
     @yield('content')
 
   <aside class="control-sidebar control-sidebar-dark">
@@ -30,5 +29,6 @@
 </div>
 
 @include('admin.partials.script')
+@include('sweetalert::alert')
 </body>
 </html>

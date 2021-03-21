@@ -1,31 +1,28 @@
 @extends('admin.layouts.admin')
-@section('title', 'Category')
+@section('title', 'Menu')
 
 @section('content')
 <div class="content-wrapper">
 
-  @include('admin.partials.content_header',['namePage'=>'Category','childPage'=>'Add Category'])
+  @include('admin.partials.content_header',['namePage'=>'Menu','childPage'=>'Add Menu'])
   <!-- Main content -->
   <div class="content">
     <div class="container-fluid">
       <div class="row ">
           <div class="col">
-            <form action="{{route('admin.category.store')}}" method="post">
+            <form action="" method="post">
               @csrf
                 <div class="form m-3">
                     <div class="form-group">
-                        <label for="">Category name</label>
-                        <input type="text" placeholder="Ten danh muc" name="category_name" value="{{ old('category_name') }}" class="form-control col-md-4">
-                        @error('category_name')
-                            <div class="alert col-sm-3 alert-danger">{{ $message }}</div>
-                        @enderror
+                        <label for="">Menu name</label>
+                        <input type="text" placeholder="Ten menu" name="menu_name" class="form-control col-md-4">
                     </div>
                     <div class="form-group">
-                        <label for="">Parent category</label>
+                        <label for="">Parent menu</label>
                         <select name="parent_id" id="" class="form-control col-md-4">
-                            <option selected disabled>Chon danh muc cha</option>
+                            <option selected disabled>Chon menu cha</option>
                             <option value="0">Root</option>
-                            {!! $htmlOption !!}
+                            {!! $menus !!}
                         </select>
                     </div>
                     <div class="mt-4">
