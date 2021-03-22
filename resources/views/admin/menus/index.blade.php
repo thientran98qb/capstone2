@@ -8,7 +8,7 @@
   <!-- Main content -->
   <div class="content">
     <div class="container-fluid">
-      <a href="{{ route('admin.menu.create')}}" class="btn btn-primary m-3">Add Category</a>
+      <a href="{{ route('admin.menu.create')}}" class="btn btn-primary m-3">Add Menu</a>
       <div class="row ">
         <div class="card container-fluid p-3 border">
           <div class="col">
