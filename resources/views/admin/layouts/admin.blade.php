@@ -8,6 +8,7 @@
   <title>@yield('title')</title>
 
   @include('admin.partials.css')
+  @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -30,5 +31,6 @@
 
 @include('admin.partials.script')
 @include('sweetalert::alert')
+@yield('js')
 </body>
 </html>

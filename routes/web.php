@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,9 +19,14 @@ Route::get('/', function () {
 });
 Route::get('/admin', function () {
     return view('admin/home');
-});
+})->name('home.admin');
 
 Route::group(['prefix' => 'admin','namespace'=>'Admin','as'=>'admin.'], function () {
+    Route::get('login','AdminLoginController@loginAdmin')->name('login');
+    Route::post('login','AdminLoginController@processLogin')->name('process.login');
     Route::resource('category', 'CategoryController');
     Route::resource('menu', 'MenuController');
+    Route::resource('product', 'ProductController');
 });
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
