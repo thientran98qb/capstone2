@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin','as'=>'admin.'], function
     Route::resource('category', 'CategoryController');
     Route::resource('menu', 'MenuController');
     Route::resource('product', 'ProductController');
+    Route::get('/product/delete/{id}', 'ProductController@delete')->name('delete_product');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

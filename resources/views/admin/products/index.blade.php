@@ -1,6 +1,12 @@
 @extends('admin.layouts.admin')
 @section('title', 'Product')
-
+@section('css')
+    <link rel="stylesheet" href="{{ asset('admins/product/index/index.css') }}">
+@endsection
+@section('js')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('admins/product/index/index.js') }}"></script>
+@endsection
 @section('content')
 <div class="content-wrapper">
 
@@ -26,22 +32,26 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>1</td>
-                      <td>Iphone 3</td>
-                      <td>2.40000.400</td>
-                      <td></td>
-                      <td>May Tinh</td>
-                      <td>
-                        <a href="" class="btn btn-success">Edit</a>
+                  @foreach ($products as $product)
+                    <tr>
+                        <td>{{ $product->id }}</td>
+                        <td>{{ $product->product_name }}</td>
+                        <td>{{ number_format($product->price) }}</td>
+                        <td>
+                            <img src="{{ $product->product_image }}" alt="{{ $product->feature_image_name }}" class="img_product">
+                        </td>
+                        <td>{{ $product->category->category_name }}</td>
+                        <td>
+                        <a href="{{ route('admin.product.edit',$product->id) }}" class="btn btn-success">Edit</a>
                         <meta name='csrf-token' content=". csrf_token() .">
-                        <form action="" method='post' class='d-inline delete_menu'>
-                            <button type='submit' class='btn btn-danger'>Delete</button>
-                        </form>
-                      </td>
-                  </tr>
+                        <a class='btn btn-danger action_delete' data-url="{{ route('admin.delete_product',$product->id) }}">Delete</a>
+                        </td>
+                    </tr>
+                  @endforeach
               </tbody>
             </table>
+
+            {{ $products->links() }}
           </div>
         </div>
       </div>
