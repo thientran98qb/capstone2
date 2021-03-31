@@ -28,6 +28,8 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin','as'=>'admin.'], function
     Route::resource('menu', 'MenuController');
     Route::resource('product', 'ProductController');
     Route::get('/product/delete/{id}', 'ProductController@delete')->name('delete_product');
+    Route::resource('slide','SliderController');
+    Route::get('/slide/delete/{id}', 'SliderController@delete')->name('delete_slide');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

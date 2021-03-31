@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('admins/product/index/index.css') }}">
 @endsection
 @section('js')
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
     <script src="{{ asset('admins/product/index/index.js') }}"></script>
 @endsection
 @section('content')
@@ -40,11 +40,15 @@
                         <td>
                             <img src="{{ $product->product_image }}" alt="{{ $product->feature_image_name }}" class="img_product">
                         </td>
-                        <td>{{ $product->category->category_name }}</td>
+                        <td>
+                            <span class="badge badge-pill badge-info">
+                                {{ $product->category->category_name }}
+                            </span>
+                        </td>
                         <td>
                         <a href="{{ route('admin.product.edit',$product->id) }}" class="btn btn-success">Edit</a>
                         <meta name='csrf-token' content=". csrf_token() .">
-                        <a class='btn btn-danger action_delete' data-url="{{ route('admin.delete_product',$product->id) }}">Delete</a>
+                        <a class='btn btn-danger text-white action_delete' data-url="{{ route('admin.delete_product',$product->id) }}">Delete</a>
                         </td>
                     </tr>
                   @endforeach

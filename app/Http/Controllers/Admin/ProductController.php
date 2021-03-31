@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Components\Recusive;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Model\Category;
 use App\Model\Product;
 use App\Model\ProductImage;
@@ -62,7 +63,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         try{
             DB::beginTransaction();

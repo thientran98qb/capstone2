@@ -47,6 +47,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.slide.index') }}" class="nav-link">
+              <i class="nav-icon fab fa-product-hunt"></i>
+              <p>
+                Slider Manager
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

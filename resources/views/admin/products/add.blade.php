@@ -18,8 +18,11 @@
                 <div class="form m-3">
                     <div class="form-group">
                         <label for="">Product name</label>
-                        <input type="text" placeholder="Product name" name="product_name" class="form-control col-md-4">
+                        <input type="text" placeholder="Product name" name="product_name" value="{{ old('product_name') }}" class="form-control col-md-4  @error('product_name') is-invalid @enderror">
                     </div>
+                    @error('product_name')
+                        <div class="alert alert-danger col-md-4 ">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
                         <label for="">Image Thumb</label>
                         <input type="file" placeholder="Image Product" name="image_product" class="form-control col-md-4">
@@ -30,15 +33,21 @@
                     </div>
                     <div class="form-group">
                         <label for="">Price</label>
-                        <input type="text" placeholder="Price" name="price" class="form-control col-md-4">
+                        <input type="text" placeholder="Price" value="{{ old('price') }}" name="price" class="form-control col-md-4 @error('price') is-invalid @enderror">
                     </div>
+                    @error('price')
+                        <div class="alert alert-danger col-md-4">{{ $message }}</div>
+                    @enderror
                     <label for="">Parent menu</label>
                     <div class="form-group">
-                        <select name="parent_id" id="" class="form-control col-md-4 category_name_js">
-                            <option value="0">Root</option>
+                        <select name="parent_id" id="" required class="form-control col-md-4 category_name_js">
+                            <option disabled selected>Select Category</option>
                             {!! $categories !!}
                         </select>
                     </div>
+                    @error('parent_id')
+                        <div class="alert alert-danger col-md-4">{{ $message }}</div>
+                    @enderror
                     <label for="">Tag name</label>
                     <div class="form-group">
                         <select class="form-control col-md-4 tag-select" name="tag_product[]" multiple="multiple">
@@ -46,8 +55,11 @@
                     </div>
                     <div class="form-group">
                         <label for="">Content</label>
-                        <textarea name="content" class="form-control col-md-4 my-editor"  id="" cols="30" rows="10"></textarea>
+                        <textarea name="content" class="form-control col-md-4 my-editor @error('content') is-invalid @enderror"  id="" cols="30" rows="10">value="{{ old('content') }}"</textarea>
                     </div>
+                    @error('content')
+                        <div class="alert alert-danger col-md-4">{{ $message }}</div>
+                    @enderror
                     <div class="mt-4">
                         <input type="submit" value="Add Product" class="btn btn-warning">
                     </div>
