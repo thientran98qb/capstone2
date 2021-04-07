@@ -1,0 +1,78 @@
+/* Mobie & Tablet*/
+@media (max-width:1023px){
+    .hide-on-mb-tablet{
+        display: none;
+    }
+
+    .header__logo{
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+
+    .header__content{
+        display: block;
+    }
+
+    .header__nav{
+        display: none;
+        /* display: block; */
+    }
+
+    /* .header__nav--item{
+        display: none;
+        margin-left: 4rem;
+        margin-top: 1rem;
+    }
+
+    .header__nav--item a{
+        line-height: 3rem;
+    } */
+
+    .nav__bar--btn{
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .header__icon .icon-cart{
+        width: 0px;
+        border-right: none;
+        top: 50%;
+        position: absolute;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .header__icon .icon-user{
+        display: none;
+    }
+}
+/* Tablet*/
+@media (min-width:740px) and (max-width:1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+}
+/* Mobie */
+@media (max-width:739px){
+    .hide-on-mobie{
+        display: none;
+    }
+
+    .header__logo{
+        top: 20%;
+        transform: translateX(-50%);
+    }
+
+    .nav__bar--btn{
+        transform: translateY(-50%);
+        margin-left: 1rem;
+    }
+
+    .header__icon .icon-cart{
+        transform: translateY(-50%);
+        margin-right: 1rem;
+    }
+}

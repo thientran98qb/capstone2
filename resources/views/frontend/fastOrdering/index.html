@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Ordering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="wrapper">
+<!-- ========================================Begin Header======================================== -->
+        <header id="header">
+            <div class="grid wide">
+                <div class="header__content">
+                    <a href="#" class="header__logo">
+                        <img src="./assets/img/main_logo_black.png" alt="logo">
+                    </a>
+                    <ul class="header__nav">
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="#home">Home</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="#menu">Menu</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="#book a table">Book a table</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="about">About</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="contract">Contract</a>
+                        </li>
+                    </ul>
+
+
+<!-- ========================================nav mobie======================================== -->
+                    <label for="nav-mobie-input" class="nav__bar--btn">
+                        <i class="fas fa-bars"></i>
+                    </label>
+
+                    <input type="checkbox" hidden name="" class="nav-input" id="nav-mobie-input">
+
+                    <label for="nav-mobie-input" class="nav__overlay"></label>
+
+                    <div class="header__nav--mobie">
+                        <label for="nav-mobie-input"  class="nav__mobie-close">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <img class="nav__logo--mobie" src="./assets/img/main_logo_black.png" alt="logo">
+                        <ul class="nav--mobie">
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-home"></i>
+                                <a class="nav--link-mobie" href="#home">Home</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fab fa-elementor"></i>
+                                <a class="nav--link-mobie" href="#menu">Menu</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-receipt"></i>
+                                <a class="nav--link-mobie" href="#book a table">Book a table</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-users"></i>
+                                <a class="nav--link-mobie" href="about">About</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-address-book"></i>
+                                <a class="nav--link-mobie" href="contract">Contract</a>
+                            </li>
+                        </ul>
+                    </div>
+<!-- ========================================nav mobie======================================== -->
+<!-- ========================================add to cart======================================== -->
+
+<!-- ========================================add to cart======================================== -->
+                    <div class="header__icon">
+                        <div class="cart">
+                            <i class="icon-cart fas fa-shopping-cart"></i>
+                            <span class="cart-notice">3</span>
+                            <!-- No cart: cart-list-empty -->
+                            <div class="cart-list ">
+                                <img src="./assets/img/cartempty.png" alt="" class="cart-list-img">
+                                <!-- Has cart  -->
+                                <h4 class="cart-heading">
+                                    Your Cart
+                                </h4>
+                                <ul class="cart-list-item">
+                                    <li class="cart-item">
+                                        <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img">
+                                        <div class="cart-info">
+                                            <div class="cart-info-text">
+                                                <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                <span class="cart-info-quantily">1</span>
+                                                <span class="cart-info-x">x</span>
+                                                <span class="cart-info-price">$40</span>
+                                            </div>
+                                            <div class="cart-info-remove">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-item">
+                                        <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img">
+                                        <div class="cart-info">
+                                            <div class="cart-info-text">
+                                                <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                <span class="cart-info-quantily">1</span>
+                                                <span class="cart-info-x">x</span>
+                                                <span class="cart-info-price">$40</span>
+                                            </div>
+                                            <div class="cart-info-remove">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-item">
+                                        <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img">
+                                        <div class="cart-info">
+                                            <div class="cart-info-text">
+                                                <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                <span class="cart-info-quantily">1</span>
+                                                <span class="cart-info-x">x</span>
+                                                <span class="cart-info-price">$40</span>
+                                            </div>
+                                            <div class="cart-info-remove">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="cart-btn">
+                                    <span>Checkout</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="user">
+                            <i class="icon-user fas fa-user"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+<!-- ========================================End Header======================================== -->
+
+<!-- ========================================Begin slider======================================== -->
+        <div id="slider">
+            <div class="grid">
+
+                    <div class="l-12 m-12 c-12">
+                        <div class="myslide fade" style="display: block;">
+                            <div class="txt">
+                                <h1>Pasta</h1>
+                                <div class="add-cart-btn slider__btn">
+                                    <button class="data__btn slider__btn-add">ADD TO CART</button>
+                                    <Span class="data__price slider__btn-price">From $9.98</Span>
+                                </div>
+                            </div>
+                            <img src="./assets/img/slider1.jpg" style="width: 100%; height: 100%;">
+                        </div>
+                    </div>
+
+
+                    <div class="l-12 m-12 c-12">
+                        <div class="myslide fade">
+                            <div class="txt">
+                                <h1>Beef Burger</h1>
+                                <div class="add-cart-btn slider__btn">
+                                    <button class="data__btn slider__btn-add">ADD TO CART</button>
+                                    <Span class="data__price slider__btn-price">From $9.98</Span>
+                                </div>
+                            </div>
+                            <img src="./assets/img/slider2.jpg" style="width: 100%; height: 100%;">
+                        </div>
+                    </div>
+
+
+                    <div class="l-12 m-12 c-12">
+                        <div class="myslide fade">
+                            <div class="txt">
+                                <h1>Beef Burger</h1>
+                                <div class="add-cart-btn slider__btn">
+                                    <button class="data__btn slider__btn-add">ADD TO CART</button>
+                                    <Span class="data__price slider__btn-price">From $9.98</Span>
+                                </div>
+                            </div>
+                            <img src="./assets/img/slider1.jpg" style="width: 100%; height: 100%;">
+                        </div>
+                    </div>
+
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="dotsbox">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+            
+        </div>
+<!-- ========================================End slider======================================== -->
+
+<!-- ========================================Begin Main======================================== -->
+        <div id="main">
+            <!-- about us  -->
+            <div class="about">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-5 m-0"></div>
+                        <div class="col l-7 m-12">
+                            <div class="about__title" >
+                                <h1>About Us</h1>
+                                <h4>Some informations about our restaurant</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="col l-5 m-12">
+                            <img src="./assets/img/about.jpg" alt="" class="about__img">
+                        </div>
+
+                        <div class="col l-7 m-12">
+                            <div class="about__content">
+                                <h2>The best food in Da Nang!</h2>
+                                <p>We offer meals of excellent quality and invite you to try our delicious food.</p>
+                                <p> The key to our success is simple: providing quality consistent food that taste great every single time. We pride ourselves on serving our customers delicious genuine dishes like: Vietnamese</p>
+                                <p>Eat delicious food. Grab a drink. But most of all, relax! We thank you from the bottom of our hearts for your continued support.</p>
+                                <h4>What people say about Us?</h4>
+                                <a href="#" class="about__btn">
+                                    <span>Check our reviews</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" >
+                        <div class="col l-12 m-12">
+                            <div class="about__end">
+                                <img src="./assets/img/about2.jpg" alt="" class="about__end-img">
+                                <div class="about__text">
+                                    <h2>Would you like to visit Us?</h2>
+                                    <h5>Book a table even right now or make an online order!</h5>
+                                    <a href="#" class="about__end-btn">
+                                        <span>Order Online</span>
+                                    </a>
+                                    <a href="#" class="about__end-btn">
+                                        <span>Book a table</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- popular menu  -->
+            <div class="popular">
+                <h2 class="popular__title">WHAT’S POPULAR</h2>
+                <h6 class="popular__desc">Clients’ Most Popular Choise</h6>
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-3 m-4">
+                            <div class="popular__list">
+                                <img src="./assets/img/item1.jpg" alt="" class="list__img">
+                                <div class="list__data">
+                                    <a href="#" class="data__category">Fish</a>
+                                    <h3 class="data__name">
+                                        Pizza Margherita
+                                    </h3>
+                                    <p class="data__desc">With basil, mozzarella, tomatoes</p>
+                                    <div class="add-cart-btn">
+                                        <button class="data__btn">ADD TO CART</button>
+                                        <Span class="data__price">From $9.98</Span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-4">
+                            <div class="popular__list">
+                                <img src="./assets/img/item2.jpg" alt="" class="list__img">
+                                <div class="list__data">
+                                    <a href="#" class="data__category">Fish</a>
+                                    <h3 class="data__name">
+                                        Pizza Margherita
+                                    </h3>
+                                    <p class="data__desc">With basil, mozzarella, tomatoes</p>
+                                    <div class="add-cart-btn">
+                                        <button class="data__btn">ADD TO CART</button>
+                                        <Span class="data__price">From $9.98</Span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-4">
+                            <div class="popular__list">
+                                <img src="./assets/img/item3.jpg" alt="" class="list__img">
+                                <div class="list__data">
+                                    <a href="#" class="data__category">Fish</a>
+                                    <h3 class="data__name">
+                                        Pizza Margherita
+                                    </h3>
+                                    <p class="data__desc">With basil, mozzarella, tomatoes</p>
+                                    <div class="add-cart-btn">
+                                        <button class="data__btn">ADD TO CART</button>
+                                        <Span class="data__price">From $9.98</Span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-0">
+                            <div class="popular__list">
+                                <img src="./assets/img/item1.jpg" alt="" class="list__img">
+                                <div class="list__data">
+                                    <a href="#" class="data__category">Fish</a>
+                                    <h3 class="data__name">
+                                        Pizza Margherita
+                                    </h3>
+                                    <p class="data__desc">With basil, mozzarella, tomatoes</p>
+                                    <div class="add-cart-btn">
+                                        <button class="data__btn">ADD TO CART</button>
+                                        <Span class="data__price">From $9.98</Span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- new menu  -->
+            <div class="new">
+                <div class="back-img"></div>
+                <div class="overlay"></div>
+                <div class="shape-top">
+                    <img src="./assets/img/curve.png" alt="">
+                </div>
+                <div class="new-detail">
+                    <h2 class="popular__title new__title">what's new dishes</h2>
+                    <h6 class="popular__desc new__desc">Clients’ Most Popular Choise</h6>
+                    <div class="grid wide">
+                        <div class="row">
+                            <div class="col l-4 m-4">
+                                <div class="popular__list">
+                                    <img src="./assets/img/item1.jpg" alt="" class="list__img">
+                                    <div class="newlist__data">
+                                        <a href="#" class="data__category">Fish</a>
+                                        <h3 class="data__name">
+                                            Pizza Margherita
+                                        </h3>
+                                        <p class="data__desc">With basil, mozzarella, tomatoes</p>
+                                        <div class="add-cart-btn">
+                                            <button class="data__btn">ADD TO CART</button>
+                                            <Span class="data__price">From $9.98</Span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-4 m-4">
+                                <div class="popular__list">
+                                    <img src="./assets/img/item2.jpg" alt="" class="list__img">
+                                    <div class="newlist__data">
+                                        <a href="#" class="data__category">Fish</a>
+                                        <h3 class="data__name">
+                                            Pizza Margherita
+                                        </h3>
+                                        <p class="data__desc">With basil, mozzarella, tomatoes</p>
+                                        <div class="add-cart-btn">
+                                            <button class="data__btn">ADD TO CART</button>
+                                            <Span class="data__price">From $9.98</Span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-4 m-4">
+                                <div class="popular__list">
+                                    <img src="./assets/img/item3.jpg" alt="" class="list__img">
+                                    <div class="newlist__data">
+                                        <a href="#" class="data__category">Fish</a>
+                                        <h3 class="data__name">
+                                            Pizza Margherita
+                                        </h3>
+                                        <p class="data__desc">With basil, mozzarella, tomatoes</p>
+                                        <div class="add-cart-btn">
+                                            <button class="data__btn">ADD TO CART</button>
+                                            <Span class="data__price">From $9.98</Span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shape-bottom">
+                    <img src="./assets/img/curve.png" alt="">
+                </div>
+            </div>
+
+            <!-- dish section starts  -->
+            <section class="dish" id="dish">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12">
+                            <h2 class="dish__title"> popular dishes</h2>
+                            
+                            <ul class="controls">
+                                <li class="buttons button-active" data-filter="all">all</li>
+                                <li class="buttons" data-filter="sushi">Sushi</li>
+                                <li class="buttons" data-filter="pizza">Pizza</li>
+                                <li class="buttons" data-filter="juice">Juice</li>
+                                <li class="buttons" data-filter="pasta">Pasta</li>
+                            </ul>
+                            
+                            <div class="image-container">
+                            
+                                <div class="image sushi">
+                                    <img src="./assets/img/item1.jpg" alt="">
+                                    <a href="#">Sushi</a>
+                                </div>
+                                <div class="image sushi">
+                                    <img src="./assets/img/item1.jpg" alt="">
+                                    <a href="#">Sushi</a>
+                                </div>
+                                <div class="image sushi">
+                                    <img src="./assets/img/item1.jpg" alt="">
+                                    <a href="#">Sushi</a>
+                                </div>
+                            
+                                <div class="image pizza">
+                                    <img src="./assets/img/item2.jpg" alt="">
+                                    <a href="#">Pizza</a>
+                                </div>
+                                <div class="image pizza">
+                                    <img src="./assets/img/item2.jpg" alt="">
+                                    <a href="#">Pizza</a>
+                                </div>
+                                <div class="image pizza">
+                                    <img src="./assets/img/item2.jpg" alt="">
+                                    <a href="#">Pizza</a>
+                                </div>
+                            
+                                <div class="image juice">
+                                    <img src="./assets/img/juice1.jpg" alt="">
+                                    <a href="#">juice</a>
+                                </div>
+                                <div class="image juice">
+                                    <img src="./assets/img/juice1.jpg" alt="">
+                                    <a href="#">juice</a>
+                                </div>
+                            
+                                <div class="image pasta">
+                                    <img src="./assets/img/item3.jpg" alt="">
+                                    <a href="#">Pasta</a>
+                                </div>
+                            
+                                <a href="#" class="about__btn full-menu-btn">
+                                    <span>View full menu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- dish section ends -->
+        </div>
+<!-- ========================================End Main======================================== -->
+<!-- ========================================Begin Footer======================================== -->
+        <footer id="footer">
+            <div class="shape-top">
+                <img src="./assets/img/curve.png" alt="">
+            </div>
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12">
+                        <div class="footer__title">
+                            <a href="#" class="footer__logo">
+                                <img src="./assets/img/logo.png" alt="logo">
+                            </a>
+                            <div class="footer__social">
+                                <a href="https://www.facebook.com/profile.php?id=100028003593431"><i class="fb fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="twitter fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/hoainamrm/"><i class="ins fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/channel/UC2pbUBTQ75P3tzNHG8XX3NQ"><i class="youtube fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col l-4 m-12 c-12">
+                        <div class="footer__contact">
+                            <h6>contact us</h6>
+                        </div>
+                        <ul>
+                            <li class="contact__list">
+                                <div class="name">Call :</div>
+                                <div class="dots"></div>
+                                <span>+84-935-373-148</span>
+                            </li>
+                            <li class="contact__list">
+                                <div class="name">Email :</div>
+                                <div class="dots"></div>
+                                <span>hoainam2827@gmail.com</span>
+                            </li>
+                            <li class="contact__list">
+                                <div class="name">Address :</div>
+                                <div class="dots"></div>
+                                <span>254 Nguyen Van Linh Da Nang</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-4 m-12 c-12">
+                        <div class="footer__time">
+                            <h6>OPENING TIME</h6>
+                        </div>
+                        <ul>
+                            <li class="time__list">
+                                <div class="name">Friday to Sunday</div>
+                                <div class="dots"></div>
+                                <span>09:00 - 22:00</span>
+                            </li>
+                            <li class="time__list">
+                                <div class="name">Tuesday to thursday</div>
+                                <div class="dots"></div>
+                                <span>11:00 - 19:00</span>
+                            </li>
+                            <li class="time__list">
+                                <div class="name">Monday</div>
+                                <div class="dots"></div>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-4 m-12 c-12">
+                        <div class="footer__subscribe">
+                            <h6>SUBSCRIBE</h6>
+                        </div>
+                        <p >Want to be notified when we launch a new template or an udpate. Just sign up and we'll
+                            send you a notification by email.</p>
+                        <form action="">
+                            <div class="form__left">
+                                <input type="email" name="subscribe" placeholder="Your Email">
+                            </div>
+                            <div class="form__right">
+                                <!-- <button class="">
+                                    <span>Send</span>
+                                    <i></i>
+                                </button> -->
+                                <button class="btn-skew form__btn">
+                                    <span>Send</span>
+                                    <i></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ftail">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12 m-12 c12">
+                            <span>© 2021, Made by <b> Duy Tan university team.</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+<!-- ========================================End Footer======================================== -->
+    </div>
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- js link  -->
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/dish.js"></script>
+
+    
+</body>
+</html>
