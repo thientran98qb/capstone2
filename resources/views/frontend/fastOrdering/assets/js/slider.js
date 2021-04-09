@@ -52,6 +52,7 @@ const sr = ScrollReveal({
     reset: true
 });
 
-sr.reveal(`.about,.about__content,.about__end,.popular,.new,.dish,#footer`, {
+sr.reveal(`.about,.about__content,.about__end,.popular,.new,.dish`, {
     interval: 200
 })
+
