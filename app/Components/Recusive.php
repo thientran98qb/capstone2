@@ -34,7 +34,6 @@ class Recusive{
                         <meta name='csrf-token' content=". csrf_token() .">
                         <form action=".route('admin.category.destroy',$value['id'])." method='post' class='d-inline delete_category'>
                             <input type='hidden' name='_token' value=".csrf_token()." />
-                            <input type='hidden' name='_method' value='DELETE'>
                             <button type='submit' class='btn btn-danger' id='deleteCategory_".$value['id']."'>Delete</button>
                         </form>
                     </td>

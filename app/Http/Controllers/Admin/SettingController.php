@@ -4,20 +4,18 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SlideRequest;
-use App\Model\Slider;
-use App\Traits\UploadImageTrait;
+use App\Http\Requests\SettingRequest;
+use App\Model\Setting;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class SliderController extends Controller
+class SettingController extends Controller
 {
-    protected $slide;
-    use UploadImageTrait;
-    public function __construct(Slider $slide)
+    protected $setting;
+    public function __construct(Setting $setting)
     {
-        $this->slide = $slide;
+        $this->setting = $setting;
     }
     /**
      * Display a listing of the resource.
@@ -26,8 +24,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $slides = $this->slide->paginate(5);
-        return view('admin.slides.index',compact('slides'));
+
+        $settings = $this->setting->paginate(5);
+        return view('admin.settings.index',compact('settings'));
     }
 
     /**
@@ -37,7 +36,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('admin.slides.add');
+        return view('admin.settings.add');
     }
 
     /**
@@ -46,25 +45,21 @@ class SliderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SlideRequest $request)
+    public function store(SettingRequest $request)
     {
         try{
             DB::beginTransaction();
-            $data = [
-                'name' => $request->slide_name,
-                'description' => $request->desc_slide
+            $dataSetting = [
+                'config_key' => $request->config_key,
+                'config_value' => $request->config_name,
             ];
-
-            $imageSlide = $this->storageTraitUpload($request,'image_slide','slide');
-            $data['image'] = $imageSlide['file_path'];
-            $this->slide->create($data);
+            $this->setting->create($dataSetting);
             DB::commit();
-            return redirect()->route('admin.slide.index');
+            return redirect()->route('admin.setting.index');
         }catch(Exception $exception){
-            DB::rollBack();
-            Log::error('message'.$exception->getMessage().'line'.$exception->getLine());
+            DB::rollBack();DB::commit();
+            Log::error('message' . $exception->getMessage() . 'line' . $exception->getLine());
         }
-
     }
 
     /**
@@ -86,8 +81,8 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        $slide = $this->slide->findOrFail($id);
-        return view('admin.slides.edit',compact('slide'));
+        $setting = $this->setting->find($id);
+        return view('admin.settings.edit',compact('setting'));
     }
 
     /**
@@ -101,21 +96,16 @@ class SliderController extends Controller
     {
         try{
             DB::beginTransaction();
-            $data = [
-                'name' => $request->slide_name,
-                'description' => $request->desc_slide
+            $dataSetting = [
+                'config_key' => $request->config_key,
+                'config_value' => $request->config_name,
             ];
-
-            if($request->hasFile('image_slide')){
-                $imageSlide = $this->storageTraitUpload($request,'image_slide','slide');
-                $data['image'] = $imageSlide['file_path'];
-            }
-            $this->slide->find($id)->update($data);
+            $this->setting->find($id)->update($dataSetting);
             DB::commit();
-            return redirect()->route('admin.slide.index');
+            return redirect()->route('admin.setting.index');
         }catch(Exception $exception){
-            DB::rollBack();
-            Log::error('message'.$exception->getMessage().'line'.$exception->getLine());
+            DB::rollBack();DB::commit();
+            Log::error('message' . $exception->getMessage() . 'line' . $exception->getLine());
         }
     }
 
@@ -129,10 +119,9 @@ class SliderController extends Controller
     {
         //
     }
-
     public function delete($id){
         try {
-            $this->slide->find($id)->delete();
+            $this->setting->find($id)->delete();
             return response()->json([
                 'code' => 200,
                 'status' => 'success'

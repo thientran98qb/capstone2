@@ -11,7 +11,6 @@
       <div class="row ">
           <div class="col">
             <form action="{{ route('admin.menu.update',$valueMenu['id']) }}" method="post">
-                @method('PATCH')
               @csrf
                 <div class="form m-3">
                     <div class="form-group">

@@ -1,15 +1,15 @@
 @extends('admin.layouts.admin')
 
-@section('title', 'Admin Home Page')
+@section('title', __('admin.title_home_page'))
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-  @include('admin.partials.content_header',['namePage'=>'Home','childPage'=>''])
+  @include('admin.partials.content_header',['namePage'=>__('admin.page_home'),'childPage'=>''])
   <!-- Main content -->
   <div class="content">
     <div class="container-fluid">
       <div class="row">
-        <h1>Trang Chu</h1>
+        <h1>@lang('admin.page_home')</h1>
       </div>
       <!-- /.row -->
     </div><!-- /.container-fluid -->

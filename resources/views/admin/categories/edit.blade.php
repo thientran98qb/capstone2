@@ -11,7 +11,6 @@
       <div class="row ">
           <div class="col">
             <form action="{{route('admin.category.update',$itemCategory->id)}}" method="post">
-                @method('PUT')
               @csrf
                 <div class="form m-3">
                     <div class="form-group">

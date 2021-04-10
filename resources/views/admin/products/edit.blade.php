@@ -14,7 +14,6 @@
       <div class="row ">
           <div class="col">
             <form action="{{ route('admin.product.update',$productItem->id) }}" enctype="multipart/form-data"  method="POST">
-                @method('PUT')
               @csrf
                 <div class="form m-3">
                     <div class="form-group">

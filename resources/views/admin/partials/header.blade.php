@@ -9,7 +9,6 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="" class="img-circle elevation-2" alt="User Image">
@@ -26,7 +25,7 @@
             <a href="{{ route('admin.category.index') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Category Manager
+                @lang('admin.user_manage')
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
@@ -35,7 +34,7 @@
             <a href="{{ route('admin.menu.index') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Menu Manager
+                @lang('admin.menu_manage')
               </p>
             </a>
           </li>
@@ -43,7 +42,7 @@
             <a href="{{ route('admin.product.index') }}" class="nav-link">
               <i class="nav-icon fab fa-product-hunt"></i>
               <p>
-                Product Manager
+                @lang('admin.product_manage')
               </p>
             </a>
           </li>
@@ -51,7 +50,31 @@
             <a href="{{ route('admin.slide.index') }}" class="nav-link">
               <i class="nav-icon fab fa-product-hunt"></i>
               <p>
-                Slider Manager
+                @lang('admin.slider_manage')
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.setting.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-sliders-h"></i>
+              <p>
+                @lang('admin.setting_manage')
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.user.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+              <p>
+               @lang('admin.user_manage')
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.role.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+              <p>
+               @lang('admin.role_manage')
               </p>
             </a>
           </li>
