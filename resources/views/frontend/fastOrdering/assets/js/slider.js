@@ -45,14 +45,14 @@ function slidefun(n) {
 
 // Scroll 
 
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '30px',
-    duration: 1800,
-    reset: true
-});
+// const sr = ScrollReveal({
+//     origin: 'top',
+//     distance: '30px',
+//     duration: 1800,
+//     reset: true
+// });
 
-sr.reveal(`.about,.about__content,.about__end,.popular,.new,.dish`, {
-    interval: 200
-})
+// sr.reveal(`.about,.about__content,.about__end,.popular,.new,.dish`, {
+//     interval: 200
+// })
 

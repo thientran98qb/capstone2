@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Ordering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/template.css">
+    <link rel="stylesheet" href="./assets/css/booktable.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- ========================================Begin Header======================================== -->
+        <header id="header">
+            <div class="grid wide">
+                <div class="header__content">
+                    <a href="#" class="header__logo">
+                        <img src="./assets/img/main_logo_black.png" alt="logo">
+                    </a>
+                    <ul class="header__nav">
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="./index.html">Home</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="./menu.html">Menu</a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="./booktable.html">Book a table</a>
+                        </li>
+                        <!-- <li class="header__nav--item">
+                            <a class="header__nav--link" href="#main">About</a>
+                        </li> -->
+                        <li class="header__nav--item">
+                            <a class="header__nav--link" href="#footer">Contract</a>
+                        </li>
+                    </ul>
+
+
+<!-- ========================================nav mobie======================================== -->
+                    <label for="nav-mobie-input" class="nav__bar--btn">
+                        <i class="fas fa-bars"></i>
+                    </label>
+
+                    <input type="checkbox" hidden name="" class="nav-input" id="nav-mobie-input">
+
+                    <label for="nav-mobie-input" class="nav__overlay"></label>
+
+                    <div class="header__nav--mobie">
+                        <label for="nav-mobie-input"  class="nav__mobie-close">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <img class="nav__logo--mobie" src="./assets/img/main_logo_black.png" alt="logo">
+                        <ul class="nav--mobie">
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-home"></i>
+                                <a class="nav--link-mobie" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fab fa-elementor"></i>
+                                <a class="nav--link-mobie" href="./menu.html">Menu</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-receipt"></i>
+                                <a class="nav--link-mobie" href="./booktable.html">Book a table</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-users"></i>
+                                <a class="nav--link-mobie" href="./login">Login</a>
+                            </li>
+                            <li class="nav--item-mobie">
+                                <i class=" fas fa-address-book"></i>
+                                <a class="nav--link-mobie" href="#footer">Contract</a>
+                            </li>
+                        </ul>
+                    </div>
+<!-- ========================================nav mobie======================================== -->
+<!-- ========================================add to cart======================================== -->
+
+<!-- ========================================add to cart======================================== -->
+                    <div class="header__icon">
+                        <div class="cart">
+                            <i class="icon-cart fas fa-shopping-cart"></i>
+                            <span class="cart-notice">3</span>
+                            <!-- No cart: cart-list-empty -->
+                            <div class="cart-list ">
+                                <img src="./assets/img/cartempty.png" alt="" class="cart-list-img">
+                                <!-- Has cart  -->
+                                <h4 class="cart-heading">
+                                    Your Cart
+                                </h4>
+                                <ul class="cart-list-item">
+                                    <li class="cart-item">
+                                        <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img">
+                                        <div class="cart-info">
+                                            <div class="cart-info-text">
+                                                <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                <span class="cart-info-quantily">1</span>
+                                                <span class="cart-info-x">x</span>
+                                                <span class="cart-info-price">$40</span>
+                                            </div>
+                                            <div class="cart-info-remove">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-item">
+                                        <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img">
+                                        <div class="cart-info">
+                                            <div class="cart-info-text">
+                                                <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                <span class="cart-info-quantily">1</span>
+                                                <span class="cart-info-x">x</span>
+                                                <span class="cart-info-price">$40</span>
+                                            </div>
+                                            <div class="cart-info-remove">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-item">
+                                        <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img">
+                                        <div class="cart-info">
+                                            <div class="cart-info-text">
+                                                <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                <span class="cart-info-quantily">1</span>
+                                                <span class="cart-info-x">x</span>
+                                                <span class="cart-info-price">$40</span>
+                                            </div>
+                                            <div class="cart-info-remove">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="cart-btn">
+                                    <span>Checkout</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="user">
+                            <i class="icon-user fas fa-user"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+<!-- ========================================End Header======================================== -->
+
+<!-- ========================================brgin main======================================== -->
+        <div id="main">
+            <div class="grid">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12">
+                        <section class = "banner book-table">
+                            <h2 data-aos="fade-down">BOOK YOUR TABLE NOW</h2>
+                            <div class = "card-container">
+                                <div class = "card-img" data-aos="fade-right">
+                                    <!-- <img src="./assets/img/card-img.jpg" alt=""> -->
+                                </div>
+                
+                                <div class = "card-content" data-aos="fade-left">
+                                    <h3>Reservation</h3>
+                                    <form>
+                                        <div class = "form-row">
+                                            <select class="form-select" name = "days">
+                                                <option value = "day-select">Select Day</option>
+                                                <option value = "sunday">Sunday</option>
+                                                <option value = "monday">Monday</option>
+                                                <option value = "tuesday">Tuesday</option>
+                                                <option value = "wednesday">Wednesday</option>
+                                                <option value = "thursday">Thursday</option>
+                                                <option value = "friday">Friday</option>
+                                                <option value = "saturday">Saturday</option>
+                                            </select>
+                
+                                            <select class="form-select" name = "hours">
+                                                <option value = "hour-select">Select Hour</option>
+                                                <option value = "10">10: 00</option>
+                                                <option value = "10">12: 00</option>
+                                                <option value = "10">14: 00</option>
+                                                <option value = "10">16: 00</option>
+                                                <option value = "10">18: 00</option>
+                                                <option value = "10">20: 00</option>
+                                                <option value = "10">22: 00</option>
+                                            </select>
+                                        </div>
+                
+                                        <div class = "form-row">
+                                            <input class="form-input" type = "text" placeholder="Full Name">
+                                            <input class="form-input" type = "text" placeholder="Phone Number">
+                                        </div>
+                
+                                        <div class = "form-row">
+                                            <input class="form-input" type = "number" placeholder="How Many Persons?" min = "1" max="10">
+                                            <input class="form-input" type = "submit" value = "BOOK TABLE">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- ========================================end main======================================== -->
+
+<!-- ========================================Begin Footer======================================== -->
+        <footer id="footer">
+            <!-- <div class="shape-top">
+                <img src="./assets/img/curve.png" alt="">
+            </div> -->
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12">
+                        <div class="footer__title">
+                            <a href="#" class="footer__logo">
+                                <img src="./assets/img/logo.png" alt="logo">
+                            </a>
+                            <div class="footer__social">
+                                <a href="https://www.facebook.com/profile.php?id=100028003593431"><i class="fb fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="twitter fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/hoainamrm/"><i class="ins fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/channel/UC2pbUBTQ75P3tzNHG8XX3NQ"><i class="youtube fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col l-4 m-12 c-12">
+                        <div class="footer__contact">
+                            <h6>contact us</h6>
+                        </div>
+                        <ul>
+                            <li class="contact__list">
+                                <div class="name">Call :</div>
+                                <div class="dots"></div>
+                                <span>+84-935-373-148</span>
+                            </li>
+                            <li class="contact__list">
+                                <div class="name">Email :</div>
+                                <div class="dots"></div>
+                                <span>hoainam2827@gmail.com</span>
+                            </li>
+                            <li class="contact__list">
+                                <div class="name">Address :</div>
+                                <div class="dots"></div>
+                                <span>254 Nguyen Van Linh Da Nang</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-4 m-12 c-12">
+                        <div class="footer__time">
+                            <h6>OPENING TIME</h6>
+                        </div>
+                        <ul>
+                            <li class="time__list">
+                                <div class="name">Friday to Sunday</div>
+                                <div class="dots"></div>
+                                <span>09:00 - 22:00</span>
+                            </li>
+                            <li class="time__list">
+                                <div class="name">Tuesday to thursday</div>
+                                <div class="dots"></div>
+                                <span>11:00 - 19:00</span>
+                            </li>
+                            <li class="time__list">
+                                <div class="name">Monday</div>
+                                <div class="dots"></div>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-4 m-12 c-12">
+                        <div class="footer__subscribe">
+                            <h6>SUBSCRIBE</h6>
+                        </div>
+                        <p >Want to be notified when we launch a new template or an udpate. Just sign up and we'll
+                            send you a notification by email.</p>
+                        <form action="">
+                            <div class="form__left">
+                                <input type="email" name="subscribe" placeholder="Your Email">
+                            </div>
+                            <div class="form__right">
+                                <!-- <button class="">
+                                    <span>Send</span>
+                                    <i></i>
+                                </button> -->
+                                <button class="btn-skew form__btn">
+                                    <span>Send</span>
+                                    <i></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ftail">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12 m-12 c-12">
+                            <span>© 2021, Made by <b> Duy Tan university team.</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+<!-- ========================================End Footer======================================== -->
+    </div>
+
+
+    <!-- jquery cdn link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+    <!-- js link  -->
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/dish.js"></script>
+
+    <!-- aos link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        AOS.init({
+            delay:300,
+            duration:1000
+        })
+    </script>
+</body>
+</html>

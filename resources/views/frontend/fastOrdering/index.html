@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fast Ordering</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/template.css">
@@ -33,7 +34,7 @@
                             <a class="header__nav--link" href="./menu.html">Menu</a>
                         </li>
                         <li class="header__nav--item">
-                            <a class="header__nav--link" href="#book a table">Book a table</a>
+                            <a class="header__nav--link" href="./booktable.html">Book a table</a>
                         </li>
                         <li class="header__nav--item">
                             <a class="header__nav--link" href="#main">About</a>
@@ -69,11 +70,11 @@
                             </li>
                             <li class="nav--item-mobie">
                                 <i class=" fas fa-receipt"></i>
-                                <a class="nav--link-mobie" href="#book a table">Book a table</a>
+                                <a class="nav--link-mobie" href="./booktable.html">Book a table</a>
                             </li>
                             <li class="nav--item-mobie">
                                 <i class=" fas fa-users"></i>
-                                <a class="nav--link-mobie" href="#">Login</a>
+                                <a class="nav--link-mobie" href="./login">Login</a>
                             </li>
                             <li class="nav--item-mobie">
                                 <i class=" fas fa-address-book"></i>
@@ -217,7 +218,7 @@
 <!-- ========================================Begin Main======================================== -->
         <div id="main">
             <!-- about us  -->
-            <div class="about">
+            <div class="about " data-aos="fade-up">
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-5 m-0 c-0"></div>
@@ -249,7 +250,7 @@
 
                     <div class="row" >
                         <div class="col l-12 m-12 c-12">
-                            <div class="about__end">
+                            <div class="about__end" data-aos="fade-up">
                                 <img src="./assets/img/about2.jpg" alt="" class="about__end-img">
                                 <div class="about__text">
                                     <h2>Would you like to visit Us?</h2>
@@ -267,7 +268,7 @@
                 </div>
             </div>
             <!-- popular menu  -->
-            <div class="popular">
+            <div class="popular" data-aos="fade-up">
                 <h2 class="popular__title">WHAT’S POPULAR</h2>
                 <h6 class="popular__desc">Clients’ Most Popular Choise</h6>
                 <div class="grid wide">
@@ -340,7 +341,7 @@
                 </div>
             </div>
             <!-- new menu  -->
-            <div class="new">
+            <div class="new" data-aos="fade-up">
                 <div class="back-img"></div>
                 <div class="overlay"></div>
                 <div class="shape-top">
@@ -408,7 +409,7 @@
             </div>
 
             <!-- dish section starts  -->
-            <section class="dish" id="dish">
+            <section class="dish" id="dish" data-aos="fade-up">
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-12 m-12 c-12">
@@ -477,7 +478,7 @@
         </div>
 <!-- ========================================End Main======================================== -->
 <!-- ========================================Begin Footer======================================== -->
-        <footer id="footer">
+        <footer id="footer" data-aos="fade-up">
             <div class="shape-top">
                 <img src="./assets/img/curve.png" alt="">
             </div>
@@ -585,8 +586,18 @@
 
     <!--========== SCROLL REVEAL ==========-->
     <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+
+    <!-- aos link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- js link  -->
     <script src="./assets/js/slider.js"></script>
     <script src="./assets/js/dish.js"></script>
+
+    <script>
+        AOS.init({
+            delay:300,
+            duration:1000
+        })
+    </script>
 </body>
 </html>
