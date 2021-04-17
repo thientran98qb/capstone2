@@ -12,6 +12,7 @@ return [
     'setting_manage' => 'Setting Manager',
     'user_manage' => 'User Manager',
     'role_manage' => 'Role Manager',
+    'permission' => 'Create data to table permissions',
     'category' => [
 
     ],

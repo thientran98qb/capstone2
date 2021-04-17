@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Model\Setting;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $settingContact = Setting::where('scope','contact')->get();
+        $settingSocial = Setting::where('scope','social')->get();
+        view()->share('contacts', $settingContact);
+
+        view()->share('socials', $settingSocial);
     }
 }

@@ -16,6 +16,20 @@ class AdminLogin
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (Auth::check())
+        {
+            $user = Auth::user();
+            $roles = $user->roles;
+            foreach ($roles as $role) {
+               if($role->name != 'guest'){
+                return $next($request);
+               }else
+               {
+                   Auth::logout();
+                   return redirect()->route('admin.login')->with('errorLogin', 'Not permission to login in the system');
+                }
+               }
+        } else
+            return redirect()->route('admin.login');
     }
 }

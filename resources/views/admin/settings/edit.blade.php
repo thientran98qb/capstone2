@@ -21,6 +21,10 @@
                         <label for="">Config name</label>
                         <input type="text" placeholder="config_name" value="{{ $setting['config_value'] }}" name="config_name" class="form-control col-md-4">
                     </div>
+                    <div class="form-group">
+                        <label for="">Scope name</label>
+                        <input type="text" placeholder="scope" value="{{ $setting['scope'] }}" name="scope" class="form-control col-md-4">
+                    </div>
                     <div class="mt-4">
                         <input type="submit" value="Edit Setting" class="btn btn-warning">
                     </div>

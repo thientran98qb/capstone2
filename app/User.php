@@ -42,4 +42,15 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsToMany(Role::class,'user_roles','user_id','role_id');
     }
+
+    public function checkPermissions($permissionCheck){
+        $roles = auth()->user()->roles;
+        foreach ($roles as $role) {
+            $permission = $role->permissions;
+            if($permission->contains('key_code',$permissionCheck)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

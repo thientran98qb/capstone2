@@ -14,7 +14,6 @@ class AdminLoginController extends Controller
     }
 
     public function processLogin(AdminLoginRequest $request) {
-        // dd($request->all());
         $remember = $request->has('remember_me') ? true : false;
         if(Auth::attempt(
         [
@@ -25,4 +24,10 @@ class AdminLoginController extends Controller
         }
         return redirect(route('admin.login'))->with('errorLogin', 'The username or password invalid.');
     }
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->route('admin.login');
+    }
+
 }

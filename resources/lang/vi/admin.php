@@ -10,6 +10,7 @@ return [
     'setting_manage' => 'Quản lý cài đặt',
     'user_manage' => 'Quản lý người dùng',
     'role_manage' => 'Quản lý vai trò',
+    'permission' => 'Tạo bảng dữ liệu permissions',
     'category' => [
 
     ],

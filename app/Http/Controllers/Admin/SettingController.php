@@ -52,6 +52,7 @@ class SettingController extends Controller
             $dataSetting = [
                 'config_key' => $request->config_key,
                 'config_value' => $request->config_name,
+                'scope' => $request->scope
             ];
             $this->setting->create($dataSetting);
             DB::commit();
@@ -99,6 +100,7 @@ class SettingController extends Controller
             $dataSetting = [
                 'config_key' => $request->config_key,
                 'config_value' => $request->config_name,
+                'scope' => $request->scope
             ];
             $this->setting->find($id)->update($dataSetting);
             DB::commit();

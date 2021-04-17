@@ -31,6 +31,10 @@
                     @error('config_value')
                         <div class="alert alert-danger col-md-4">{{ $message }}</div>
                     @enderror
+                    <div class="form-group">
+                        <label for="">Scope name</label>
+                        <input type="text" placeholder="scope" name="scope" class="form-control col-md-4">
+                    </div>
                     <div class="mt-4">
                         <input type="submit" value="Add Setting" class="btn btn-warning">
                     </div>
