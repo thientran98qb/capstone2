@@ -1,0 +1,33 @@
+#main{
+    margin-top: 7rem;
+}
+
+/* js  */
+.bar-fixed{
+    position: fixed;
+    top: 70px;
+    width: 21%;
+}
+/* end js  */
+
+.menu__title{
+    background-color: #f3f4f4;
+    text-align: center;
+    padding: 7rem;
+}
+
+.menu__title h1{
+    font-size: 7rem;
+    font-weight: 100;
+    color: #333;
+}
+
+.menu__title h4{
+    color: #a4a7a9;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.menu__content{
+    margin-top: 3rem;
+}
