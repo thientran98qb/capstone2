@@ -101,3 +101,5 @@ Route::group(['middleware' => 'locale'], function() {
 Auth::routes();
 
 Route::get('/booktable', 'BookTableController@index')->name('book.table');
+Route::get('/auth/{provider}', 'SocialController@redirectToProvider');
+Route::get('/auth/{provide}/callback', 'SocialController@handleProviderCallback');

@@ -1,9 +1,13 @@
 <div class="cart">
     <i class="icon-cart fas fa-shopping-cart"></i>
     <span class="cart-notice">
+      @if (session()->has('cart'))
         @php
-           echo count(session()->get('cart'))
+            echo count(session()->get('cart'))
         @endphp
+      @else
+      0
+      @endif
     </span>
     <!-- No cart: cart-list-empty -->
     <div class="cart-list ">

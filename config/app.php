@@ -179,6 +179,8 @@ return [
 
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -232,6 +234,7 @@ return [
 
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

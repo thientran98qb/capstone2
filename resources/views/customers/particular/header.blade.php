@@ -61,9 +61,21 @@
 
             <div class="header__icon">
                 @include('customers.particular.cart')
+                @if (auth()->user())
                 <div class="user">
-                    <i class="icon-user fas fa-user"></i>
+                    <a href=""></a>
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit"><i class="icon-user fas fa-user"></i></button>
+                    </form>
                 </div>
+                @else
+                <div class="user">
+                    <a class="text-dark" style="font-size:14px;text-decoration: none;padding:0 10px; border-right:1px solid black;color:#333" href="/login">Login</a>
+                    <a class="text-dark" style="font-size:14px;text-decoration: none;padding:0 10px;color:#333" href="/register">Register</a>
+                </div>
+                @endif
+
             </div>
 
         </div>
