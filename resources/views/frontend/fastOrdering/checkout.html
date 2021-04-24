@@ -156,12 +156,192 @@
         <!-- ========================================End Header======================================== -->
         <!-- ========================================Begin Main======================================== -->
         <div id="main">
-            <div class="grid wide">
-                <div class="menu__title" data-aos="fade-up">
+            <div class="grid wide"> 
+                <!-- data-aos="fade-up"  -->
+                <div class="menu__title" >
                     <div class="row">
                         <div class="col l-12 m-0 c-0">
+                            <div class="menu__top-img"></div>
                             <h1>Checkout</h1>
                             <h4>Some informations about our restaurant</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu__content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col l-8 m-12 c-12">
+                                <div class="checkout">
+                                    <div class="checkout__title">
+                                        <h4 class="border-bottom">
+                                            <i class="fas fa-user-edit"></i>
+                                            Basic informations
+                                        </h4>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="form-group">
+                                            <div class="form-element col l-6 m-6 c-12">
+                                                <label>Name:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-element col l-6 m-6 c-12">
+                                                <label>Phone number:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-element col l-12 m-12 c-12">
+                                                <label>Street and number:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-element col l-6 m-6 c-12">
+                                                <label>City:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-element col l-6 m-6 c-12">
+                                                <label>E-mail address:</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="delivery">
+                                        <h4 class="border-bottom">
+                                            <i class="fas fa-truck"></i>
+                                            Delivery
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="form-element col l-6 m-6 c-12">
+                                                <label>Delivery time:</label>
+                                                <div class="select">
+                                                    <select class="form-control" name="" id="">
+                                                        <option>As fast as possible</option>
+                                                        <option>In one hour</option>
+                                                    </select>
+                                                    <i class="fas fa-arrow-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="payment">
+                                        <h4 class="border-bottom">
+                                            <i class="fas fa-money-check-alt"></i>
+                                            Payment
+                                        </h4>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="form-element col l-4 m-4 c-12">
+                                                <label class="custom-control">
+                                                    <input type="radio" name="payment_type" class="custom-control-input">
+                                                    <span class="custom-control-description">PayPal</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-element col l-4 m-4 c-12">
+                                                <label class="custom-control">
+                                                    <input type="radio" name="payment_type" class="custom-control-input">
+                                                    <span class="custom-control-description">Credit Card</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-element col l-4 m-4 c-12">
+                                                <label class="custom-control">
+                                                    <input type="radio" name="payment_type" class="custom-control-input">
+                                                    <span class="custom-control-description">Cash</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col l-4 m-12 c-12">
+                                <div class="bill">
+                                    <h4 class="bill-cart-heading">
+                                        Your Cart
+                                    </h4>
+                                    <ul class="cart-list-item">
+                                        <li class="cart-item">
+                                            <!-- <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img"> -->
+                                            <div class="bill-cart-info cart-info">
+                                                <div class="cart-info-text">
+                                                    <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                    <span class="cart-info-quantily">1</span>
+                                                    <span class="cart-info-x">x</span>
+                                                    <span class="cart-info-price">$40</span>
+                                                </div>
+                                                <span class="cart-info-price">$40</span>
+                                                <div class="cart-info-remove">
+                                                    <i class="fas fa-times"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="cart-item">
+                                            <!-- <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img"> -->
+                                            <div class="bill-cart-info cart-info">
+                                                <div class="cart-info-text">
+                                                    <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                    <span class="cart-info-quantily">1</span>
+                                                    <span class="cart-info-x">x</span>
+                                                    <span class="cart-info-price">$40</span>
+                                                </div>
+                                                <span class="cart-info-price">$40</span>
+                                                <div class="cart-info-remove">
+                                                    <i class="fas fa-times"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="cart-item">
+                                            <!-- <img src="./assets/img/cartlist.jpg" alt="" class="cart-item-img"> -->
+                                            <div class="bill-cart-info cart-info">
+                                                <div class="cart-info-text">
+                                                    <h5 class="cart-info-name">Perfect Pasta</h5>
+                                                    <span class="cart-info-quantily">1</span>
+                                                    <span class="cart-info-x">x</span>
+                                                    <span class="cart-info-price">$40</span>
+                                                </div>
+                                                <span class="cart-info-price">$40</span>
+                                                <div class="cart-info-remove">
+                                                    <i class="fas fa-times"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="bill__sumary">
+                                            <div class="row mg-bottom f-end">
+                                                <div class="col l-7 text-right">
+                                                    Order total:
+                                                </div>
+                                                <div class="col l-5">
+                                                    <span class="bill__sumary-product">$120.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="row f-end">
+                                                <div class="col l-7 text-right">
+                                                    Devliery:
+                                                </div>
+                                                <div class="col l-5">
+                                                    <span class="bill__sumary-product">$3.99</span>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row f-end">
+                                                <div class="col l-7 text-right">
+                                                    Total:
+
+                                                </div>
+                                                <div class="col l-5">
+                                                    <span class="bill__sumary-product">$123.99</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col l-12 m-12 c-12">
+                                <button class="order-btn">
+                                    <span>Order now!</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,10 +349,10 @@
         </div>
         <!-- ========================================End Main======================================== -->
         <!-- ========================================Begin Footer======================================== -->
-        <footer id="footer" data-aos="fade-up">
-            <div class="shape-top">
+        <footer id="footer">
+            <!-- <div class="shape-top">
                 <img src="./assets/img/curve.png" alt="">
-            </div>
+            </div> -->
             <div class="grid wide">
                 <div class="row">
                     <div class="col l-12 m-12 c-12">
