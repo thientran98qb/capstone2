@@ -258,7 +258,7 @@ select:focus {
 
 .bill .cart-info-text{
     height: 42px;
-    margin: 12px;
+    margin: 0;
 }
 
 .bill-cart-heading {
