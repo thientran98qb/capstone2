@@ -21,3 +21,17 @@ img{
     display: block;
     max-width: 100%;
 }
+
+::selection {
+    background: #ddae71;
+    color: #fff;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent,#ddae71);
+    border-radius: 6px;
+}

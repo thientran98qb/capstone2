@@ -47,6 +47,7 @@ Route::group(['middleware' => 'locale'], function() {
                 Route::get('/edit/{id}','ProductController@edit')->name('product.edit');
                 Route::post('/update/{id}','ProductController@update')->name('product.update');
                 Route::get('/product/delete/{id}', 'ProductController@delete')->name('delete_product');
+                Route::post('/UploadNewsPhoto','ProductController@UploadNewsPhoto');
             });
             Route::prefix('slide')->group(function(){
                 Route::get('','SliderController@index')->name('slide.index');
@@ -86,6 +87,14 @@ Route::group(['middleware' => 'locale'], function() {
                 Route::post('/add','PermissionController@store')->name('per.store');
                 Route::get('/edit/{id}','PermissionController@edit')->name('per.edit');
             });
+            Route::prefix('table')->group(function(){
+                Route::get('','TableController@index')->name('table.index');
+                Route::get('/add','TableController@create')->name('table.create');
+                Route::post('/add','TableController@store')->name('table.store');
+                Route::get('/edit/{id}','TableController@edit')->name('table.edit');
+                Route::post('/update/{id}','TableController@update')->name('table.update');
+                Route::get('/delete/{id}','TableController@delete')->name('table.destroy');
+            });
         });
 
     });
@@ -94,12 +103,20 @@ Route::group(['middleware' => 'locale'], function() {
         Route::get('addcart/{id}','CartController@addCart')->name('add.cart');
         Route::get('changeitem/{id}','CartController@changeItem')->name('change.item.cart');
         Route::get('removeitem/{id}','CartController@removeItem')->name('remove.item.cart');
+        Route::get('/checkout','CheckoutController@index')->name('checkout');
+        Route::post('/order','CheckoutController@orders')->name('orders');
+
     });
     Route::get('change-language/{language}', 'HomeController@changeLanguage')
         ->name('user.change-language');
 });
 Auth::routes();
 
-Route::get('/booktable', 'BookTableController@index')->name('book.table');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/booktable', 'BookTableController@index')->name('book.table');
+    Route::get('/filter.table', 'BookTableController@filterTable')->name('filter.table');
+    Route::post('/reservation', 'BookTableController@reservationTable')->name('reservation.table');
+
+});
 Route::get('/auth/{provider}', 'SocialController@redirectToProvider');
 Route::get('/auth/{provide}/callback', 'SocialController@handleProviderCallback');

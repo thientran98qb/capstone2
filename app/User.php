@@ -53,4 +53,7 @@ class User extends Authenticatable
         }
         return false;
     }
+    public function tables(){
+        return $this->BelongsToMany(Table::class,'user_tables','user_id','table_id')->withPivot('phone_number','time','date');
+    }
 }

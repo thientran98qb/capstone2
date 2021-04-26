@@ -39,7 +39,7 @@
             <p class="text-center">Cart is empty</p>
            @endif
         </ul>
-        <a href="#" class="cart-btn">
+        <a href="{{route('customer.checkout')}}" class="cart-btn">
             <span>Checkout</span>
         </a>
     </div>
