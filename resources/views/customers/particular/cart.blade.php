@@ -39,8 +39,12 @@
             <p class="text-center">Cart is empty</p>
            @endif
         </ul>
+        <div id="thu">
+            @if (session()->has('cart') && !empty(session()->get('cart')))
         <a href="{{route('customer.checkout')}}" class="cart-btn">
             <span>Checkout</span>
         </a>
+        @endif
+        </div>
     </div>
 </div>

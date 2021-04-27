@@ -42,6 +42,7 @@ Route::group(['middleware' => 'locale'], function() {
             });
             Route::prefix('product')->group(function(){
                 Route::get('','ProductController@index')->name('product.index');
+                Route::get('/search','ProductController@search')->name('product.search');
                 Route::get('/add','ProductController@create')->name('product.create');
                 Route::post('/add','ProductController@store')->name('product.store');
                 Route::get('/edit/{id}','ProductController@edit')->name('product.edit');
@@ -95,6 +96,18 @@ Route::group(['middleware' => 'locale'], function() {
                 Route::post('/update/{id}','TableController@update')->name('table.update');
                 Route::get('/delete/{id}','TableController@delete')->name('table.destroy');
             });
+            Route::prefix('orders')->group(function(){
+                Route::get('','OrderController@index')->name('order.index');
+                Route::get('/add','OrderController@create')->name('order.create');
+                Route::post('/add','OrderController@store')->name('order.store');
+                Route::get('/edit/{id}','OrderController@edit')->name('order.edit');
+                Route::post('/update/{id}','OrderController@update')->name('order.update');
+                Route::get('/delete/{id}','OrderController@delete')->name('order.destroy');
+
+                Route::post('/update_status/{id}','OrderController@updateStatus')->name('update.status');
+                Route::get('/manage_reser','OrderController@reservationTable')->name('reservation.index');
+                Route::get('/changeStatus','OrderController@changeStatus')->name('change.status');
+            });
         });
 
     });
@@ -103,8 +116,10 @@ Route::group(['middleware' => 'locale'], function() {
         Route::get('addcart/{id}','CartController@addCart')->name('add.cart');
         Route::get('changeitem/{id}','CartController@changeItem')->name('change.item.cart');
         Route::get('removeitem/{id}','CartController@removeItem')->name('remove.item.cart');
-        Route::get('/checkout','CheckoutController@index')->name('checkout');
-        Route::post('/order','CheckoutController@orders')->name('orders');
+        Route::middleware(['auth'])->group(function () {
+            Route::get('/checkout','CheckoutController@index')->name('checkout');
+            Route::post('/order','CheckoutController@orders')->name('orders');
+        });
 
     });
     Route::get('change-language/{language}', 'HomeController@changeLanguage')

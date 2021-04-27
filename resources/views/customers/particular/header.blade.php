@@ -63,11 +63,26 @@
                 @include('customers.particular.cart')
                 @if (auth()->user())
                 <div class="user">
-                    <a href=""></a>
-                    <form action="{{route('logout')}}" method="POST">
+                    <ul class="header__nav">
+                        <li class="header__nav--item">
+                            <i class="icon-user fas fa-user"></i>{{auth()->user()->name}}
+                            <ul class="header__subnav">
+                                <li class="header__subnav--item">
+                                    <a href="">Profile</a>
+                                </li>
+                                <li class="header__subnav--item">
+                                    <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <button type="submit" style="cursor: pointer">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    {{-- <form action="{{route('logout')}}" method="POST">
                         @csrf
                         <button type="submit"><i class="icon-user fas fa-user"></i></button>
-                    </form>
+                    </form> --}}
                 </div>
                 @else
                 <div class="user">

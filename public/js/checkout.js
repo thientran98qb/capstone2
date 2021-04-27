@@ -4,7 +4,10 @@ $(".delivery_hide").addClass("hidden");
 //on change hide all divs linked to select and show only linked to selected option
 $("#mystuff").on("change", function () {
     var selector = ".delivery_" + $(this).val();
-
+    // var selector = ".delivery_opt1";
+    if (selector == ".delivery_opt2") {
+        $(".delivery_opt1").addClass("hidden");
+    }
     //show only element connected to selected option
     $(selector).removeClass("hidden");
 });

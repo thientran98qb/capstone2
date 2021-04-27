@@ -109,6 +109,12 @@ class ProductController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        $products = $this->product->getProductSearch($request);
+        return view('admin.products.index', compact('products'));
+
+    }
     /**
      * Display the specified resource.
      *

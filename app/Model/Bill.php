@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
@@ -10,5 +11,8 @@ class Bill extends Model
 
     public function products() {
         return $this->belongsToMany(Product::class,'bill_details','bill_id','product_id')->withPivot('quantity','desc');
+    }
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
     }
 }

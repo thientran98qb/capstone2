@@ -15,9 +15,12 @@
   <div class="content">
     <div class="container-fluid">
       <a href="{{ route('admin.product.create') }}" class="btn btn-primary m-3">Add Product</a>
+
       <div class="row ">
         <div class="card container-fluid p-3 border">
           <div class="col">
+
+            @include('admin.partials.header-product')
             <table class="table table-ordered table-bordered ">
               <thead>
                 <tr>

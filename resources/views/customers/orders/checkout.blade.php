@@ -26,6 +26,11 @@
                     @csrf
                 <div class="row">
                     <div class="col l-8 m-12 c-12">
+                        @if (session()->has('success'))
+                        <div class="alert alert-success" style="background-color: ">
+                           {{ session()->get('success') }}
+                        </div>
+                        @endif
                         <div class="checkout">
                             <div class="checkout__title">
                                 <h4 class="border-bottom">
@@ -95,11 +100,12 @@
                             <div class="row">
                                 <div class="form-group">
                                     <div class="form-element col l-6 m-6 c-12">
-                                        <label>Delivery time:</label>
+                                        <label>Đặt bàn trước:</label>
                                         <div class="select">
                                             <select class="form-control" name="" id="mystuff">
-                                                <option value="opt1">As fast as possible</option>
-                                                <option>In one hour</option>
+                                                <option selected disabled>select</option>
+                                                <option value="opt1">Đặt bàn trước</option>
+                                                <option value="opt2">Không</option>
                                             </select>
                                             <i class="fas fa-arrow-down"></i>
                                         </div>
@@ -149,26 +155,28 @@
                                 Your Cart
                             </h4>
                             <ul class="cart-list-item">
-                                @foreach ($carts as $cart)
-                                <li class="cart-item">
-                                    <input type="hidden" name="product_id[]" value="{{$cart['id']}}">
-                                    <input type="hidden" name="quantity[]" value="{{$cart['quantity']}}">
-                                    <input type="hidden" name="price[]" value="{{$cart['price']}}">
-                                    <img src="{{$cart['img']}}" alt="" class="cart-item-img">
-                                    <div class="bill-cart-info cart-info">
-                                        <div class="cart-info-text">
-                                            <h5 class="cart-info-name">{{$cart['product_name']}}</h5>
-                                            <span class="cart-info-quantily" >{{$cart['quantity']}}</span>
-                                            <span class="cart-info-x">x</span>
-                                            <span class="cart-info-price">${{$cart['price']}}</span>
-                                        </div>
-                                        <span class="cart-info-price">${{$cart['total_price']}}</span>
-                                        <div class="cart-info-remove">
-                                            <i class="fas fa-times"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                @endforeach
+                               @if (session()->has('cart'))
+                               @foreach ($carts as $cart)
+                               <li class="cart-item">
+                                   <input type="hidden" name="product_id[]" value="{{$cart['id']}}">
+                                   <input type="hidden" name="quantity[]" value="{{$cart['quantity']}}">
+                                   <input type="hidden" name="price[]" value="{{$cart['price']}}">
+                                   <img src="{{$cart['img']}}" alt="" class="cart-item-img">
+                                   <div class="bill-cart-info cart-info">
+                                       <div class="cart-info-text">
+                                           <h5 class="cart-info-name">{{$cart['product_name']}}</h5>
+                                           <span class="cart-info-quantily" >{{$cart['quantity']}}</span>
+                                           <span class="cart-info-x">x</span>
+                                           <span class="cart-info-price">${{$cart['price']}}</span>
+                                       </div>
+                                       <span class="cart-info-price">${{$cart['total_price']}}</span>
+                                       <div class="cart-info-remove">
+                                           <i class="fas fa-times"></i>
+                                       </div>
+                                   </div>
+                               </li>
+                               @endforeach
+                               @endif
 
                                 <div class="bill__sumary">
                                     <div class="row mg-bottom f-end">

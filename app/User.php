@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Model\Bill;
 use App\Model\Role;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -55,5 +56,9 @@ class User extends Authenticatable
     }
     public function tables(){
         return $this->BelongsToMany(Table::class,'user_tables','user_id','table_id')->withPivot('phone_number','time','date');
+    }
+
+    public function bills(){
+        return $this->hasMany(Bill::class,'user_id');
     }
 }

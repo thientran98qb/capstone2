@@ -36,6 +36,7 @@ $(document).on("click", ".addcart", function () {
                 </li>`;
             });
             $(".cart-list-item").html(dataRes);
+            $("#thu").load(window.location.href + " #thu");
         },
         error: function (data) {},
     });
@@ -80,6 +81,7 @@ $(document).on("click", ".remove-item-cart", function () {
                         "Your file has been deleted.",
                         "success"
                     );
+                    $("#thu").load(window.location.href + " #thu");
                 },
                 error: function (data) {},
             });

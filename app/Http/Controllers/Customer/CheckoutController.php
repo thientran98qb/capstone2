@@ -44,5 +44,6 @@ class CheckoutController extends Controller
             $sync_data[$product[$i]] = ['quantity' => $quantity[$i],'desc'=>$price[$i]];
         }
         $bill->products()->sync($sync_data);
+        return redirect()->back()->with('success',' Bạn đã đặt hàng thành công! Chúng tôi sẽ gửi email xác nhận ngay lập tức');
     }
 }
