@@ -101,6 +101,17 @@
         top: 76%;
     }
 }
+/* ========================================end footer======================================== */
+
+/* checkout  */
+.f-end{
+    justify-content: flex-end;
+}
+
+.bill{
+    max-height: 550px;
+}
+/* end checkout  */
 
 /* Tablet*/
 @media (min-width:740px) and (max-width:1023px){
@@ -170,6 +181,8 @@
         visibility: hidden;
     } */
     /* end dish menu  */
+
+    
 }
 /* Mobie */
 @media (max-width:739px){
@@ -339,5 +352,60 @@
     /* MENU responsive  */
     .menu-price{
         display: none;
+    }
+
+
+    /* detail  */
+    .desc,
+    .cmt__heading,
+    .cmt__box,
+    .cmt__detail,
+    .detail-dish{
+        padding: 0 1rem;
+    }
+
+    .ftail{
+        display: none;
+    }
+
+    .effect-2 {
+        width: 27rem;
+    }
+
+    .cmt__box-action {
+        bottom: -21px;
+        right: 4rem;
+    }
+
+    .cmt__more {
+        padding: 5.6rem 1.6rem 5.6rem 1rem;
+    }
+
+    /* .cmt__detail-avatar {
+        margin-top: 5rem;
+    } */
+    
+    /* .cmt__detail-body {
+        margin-top: 5rem;
+    } */
+
+    .cmt__detail {
+        margin-top: 4.6rem;
+    }
+    
+    .cmt__detail-content-text {
+        max-width: 26rem;
+    }
+    
+    .effect-2-sub{
+        width: 22rem;
+    }
+
+    .cmt__box-action-sub{
+        bottom: 1rem;
+    }
+
+    .view__reply__more {
+        margin: 3rem 0 0;
     }
 }

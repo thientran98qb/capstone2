@@ -1,0 +1,373 @@
+#main{
+    margin-top: 7rem;
+    background-color: #211E1E;
+}
+
+.detail-dish{
+    display: flex;
+    margin: 5rem 0;
+    flex-wrap: wrap;
+}
+
+.detail-dish-img{
+    padding: 3rem;
+    background-color: #2A2828;
+    height: auto;
+}
+.detail-dish-img img{
+    margin: 0 auto;
+}
+
+.detail-dish__title{
+    margin: 5rem 0;
+}
+
+.detail-dish__title h2{
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.detail-dish__title p{
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #eee;
+    text-align: justify;
+}
+
+
+.add-cart-btn{
+    position: relative;
+    height: 4.8rem;
+    width: 220px;
+    margin: 0 auto;
+}
+
+.slider__btn{
+    position: relative;
+    display: inline-block;
+    height: 7.8rem;
+    width: 245px;
+    left: 0;
+    margin: 0 auto;
+}
+
+.data__btn{
+    padding: 0 2.1rem;
+    font-size: 1.3rem;
+    border-radius: 0;
+    height: 4.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #DDAE71;
+    color: #fff;
+    background-color: #282B2E;
+    /* margin: 0 auto; */
+    /* left: 2rem; */
+    /* top: 0; */
+    position: absolute;
+}
+
+
+.data__price{
+    position: absolute;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    /* margin: 0.5rem auto; */
+    left: 52%;
+    height: 4.8rem;
+    background-color: #ddae71;
+    line-height: 4.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.slider__btn-price{
+    min-width: 113px;
+}
+
+.data__btn:hover{
+    background-color: #DDAE71;
+    transition: 0.3s;
+}
+
+
+.desc h3{
+    color: #fff;
+    font-size: 3.6rem;
+    display: block;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 2;
+    text-transform: none;
+}
+
+.desc p{
+    margin: 0 0 20px 0;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.ingredient{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 40px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.ingredient li{
+    display: block;
+    position: relative;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    padding-right: 40px;
+    border-right: 1px solid #3e3c3c;
+}
+
+.ingredient li strong{
+    display: block;
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.ingredient li strong::after{
+    display: block;
+    width: 30px;
+    height: 1px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: #cccccc;
+    content: '';
+}
+
+.ingredient li .green{
+    display: block;
+    color: #6dc405;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.cmt{
+
+}
+
+.cmt__heading h4{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.6;
+    margin: 5rem 0;
+}
+
+.cmt__box{
+    margin: 0 0 .5rem 3rem;
+    position: relative;
+    padding-bottom: 3rem;
+    line-height: 1.4rem;
+    max-width: 600px;
+}
+
+.cmt__box img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    left: -32px;
+    top: -4px;
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+
+.effect-2{
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    margin: 0 3rem;
+    width: 100%;
+    background-color: transparent;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.effect-2:focus{
+    color: #fff;
+}
+
+
+
+.cmt__box-action{
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+    margin: 1rem 0 -2rem;
+    z-index: 3;
+}
+
+.cmt__box-cancel{
+    display: inline-block;
+    padding: 1rem 1.6rem;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 1px;
+    transition: all ease-in-out .2s;
+    background: transparent;
+    color: #ccc;
+    margin-right: 16px;
+}
+
+.cmt__box-cancel:hover{
+    color: #f1f1f1;
+    background: rgba(255,255,255,.1);
+}
+
+.cmt__box-ok{
+    display: inline-block;
+    padding: 1rem 1.6rem;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 1px;
+    transition: all ease-in-out .2s;
+    color: #ccc;
+    background: rgba(255,255,255,.2);
+}
+
+.cmt__detail{
+    display: flex;
+    margin-top: 1.6rem;
+    position: relative;
+}
+
+.cmt__detail-avatar{
+    width: 3.6rem;
+    flex-shrink: 0;
+}
+
+.cmt__avatar-name{
+    width: 100%;
+    height: 3.6rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+.cmt__avatar-name span{
+    font-size: 1rem;
+    line-height: 3.5rem;
+    color: #c8c3db;
+}
+
+.cmt__detail-body{
+    position: relative;
+    padding-left: 1.8rem;
+    margin-left: 0.8rem;
+    flex: 1 1;
+}
+
+.cmt__detail-content{
+    background-color: rgba(255,255,255,.1);
+    border-radius: 18px;
+    color: #1c1e21;
+    display: inline-block;
+    max-width: 586px;
+    position: relative;
+    padding: 9px 12px 9px 12px;
+}
+
+.cmt__detail-content-author{
+    font-size: 1.6rem;
+    color: #c8c3db;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.cmt__detail-content-text{
+    font-size: 1.4rem;
+    color: #c8c3db;
+    line-height: 1.6rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.cmt__detail-time{
+    margin-top: 1rem;
+}
+
+.created-At{
+    font-size: 1.4rem;
+    color: #aaa;
+}
+
+.cmt__detail-rep:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.reply-box{
+    margin: 2rem 0 .5rem 2rem;
+    position: relative;
+    padding-bottom: 3rem;
+    line-height: 1.4rem;
+    max-width: 60rem;
+}
+
+.reply-box-avatar{
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    position: absolute;
+    left: -1.8rem;
+    top: 0;
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+.cmt__more{
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--primary-color);
+    padding: 1.6rem 1.6rem 5.6rem 0;
+}
+
+.cmt__more:hover{
+    cursor: pointer;
+    opacity: .9;
+}
+
+.view__reply__more{
+    margin: 3rem 0 1rem;
+}
+
+.show__hide__cmt{
+    color: #aaa;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.view__reply__more i{
+    margin-left: 1rem;
+    position: relative;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+
+
