@@ -1,42 +1,42 @@
-#main{
+#main {
     margin-top: 7rem;
 }
 
 /* js  */
-.bar-fixed{
+.bar-fixed {
     position: fixed;
     top: 70px;
     width: 21%;
 }
 /* end js  */
 
-.menu__title{
+.menu__title {
     background-color: #f3f4f4;
     text-align: center;
     padding: 7rem;
 }
 
-.menu__title h1{
+.menu__title h1 {
     font-size: 7rem;
     font-weight: 100;
     color: #333;
 }
 
-.menu__title h4{
+.menu__title h4 {
     color: #a4a7a9;
     font-size: 1.7rem;
     font-weight: 500;
 }
 
-.menu__content{
+.menu__content {
     margin-top: 3rem;
 }
 
-.bar{
+.bar {
     display: block;
 }
 
-.bar__list{
+.bar__list {
     flex-direction: column;
     padding: 1.5rem 2.5rem;
     text-transform: uppercase;
@@ -44,9 +44,9 @@
     background-color: #282b2e;
 }
 
-.bar__list a{
+.bar__list a {
     text-decoration: none;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     /* font-size: 15.4px; */
     font-size: 2.1rem;
     line-height: 4.1rem;
@@ -56,20 +56,19 @@
     transition: 0.2s;
 }
 
-.bar__list a:hover{
+.bar__list a:hover {
     color: var(--primary-color);
     transition: 0.2s;
 }
 
-.bar__item{
+.bar__item {
     list-style: none;
 }
 
-.menu__top{
-
+.menu__top {
 }
 
-.menu__top-title{
+.menu__top-title {
     position: relative;
     height: 35vh;
     min-height: 160px;
@@ -78,7 +77,7 @@
     background-color: #282b2e;
 }
 
-.menu__top-img{
+.menu__top-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -90,46 +89,46 @@
     z-index: 0;
 }
 
-.pt-img{
-    background-image: url(/assets/img/pt-img.jpg)
+.pt-img {
+    background-image: url(/assets/img/pt-img.jpg);
 }
 
-.bg-img{
-    background-image: url(/assets/img/menu-burgers.jpg)
+.bg-img {
+    background-image: url("img/menu-burgers.jpg");
 }
 
-.pz-img{
-    background-image: url(/assets/img/pz-img.jpg)
+.pz-img {
+    background-image: url("/public/frontend/assets/img/pz-img.jpg");
 }
 
-.ss-img{
-    background-image: url(/assets/img/ss-img.jpg)
+.ss-img {
+    background-image: url(/assets/img/ss-img.jpg);
 }
 
-.ds-img{
-    background-image: url(/assets/img/ds-img.jpg)
+.ds-img {
+    background-image: url(/assets/img/ds-img.jpg);
 }
 
-.dr-img{
-    background-image: url(/assets/img/dr-img.jpg)
+.dr-img {
+    background-image: url(/assets/img/dr-img.jpg);
 }
-.menu__top-img img{
+.menu__top-img img {
     position: absolute;
     max-width: 100%;
     height: auto;
 }
 
-.menu__top-title .menu__top-img::after{
+.menu__top-title .menu__top-img::after {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     content: " ";
-    background-image: linear-gradient(0deg,rgba(0,0,0,.8),transparent);
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);
 }
 
-.menu__top-title h2{
+.menu__top-title h2 {
     position: absolute;
     bottom: 72px;
     /* bottom: 3rem; */
@@ -142,42 +141,41 @@
     font-weight: 100;
 }
 
-.menu__list{
+.menu__list {
     border: 1px solid #e0e0e0;
     background-color: #fff;
 }
 
-.menu__list-item{
+.menu__list-item {
     padding: 1.25rem 1.5rem;
     line-height: 1.4;
     align-items: center;
-    border-bottom: 1px solid #e0e0e0
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.menu__list-item a{
+.menu__list-item a {
     text-decoration: none;
 }
 
-.menu-list-left{
-
+.menu-list-left {
 }
 
-.menu-list-left h6{
+.menu-list-left h6 {
     font-size: 2rem;
     font-weight: 500;
     color: #333;
 }
 
-.menu-list-left span{
+.menu-list-left span {
     font-size: 1.2rem;
     color: #666;
 }
 
-.menu-list-right{
+.menu-list-right {
     position: relative;
 }
 
-.menu-price{
+.menu-price {
     right: 35%;
     position: absolute;
     /* align-items: center; */
@@ -187,32 +185,31 @@
     transform: translateY(-50%);
 }
 
-.menu-btn{
+.menu-btn {
     right: 3%;
 }
 
-.data__btn{
+.data__btn {
     padding: 0 2.1rem;
     font-size: 1.3rem;
     border-radius: 0;
     height: 4.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    border: 2px solid #DDAE71;
+    border: 2px solid #ddae71;
     color: #fff;
-    background-color: #282B2E;
+    background-color: #282b2e;
     /* margin: 0 auto; */
     /* left: 2rem; */
     /* top: 0; */
     position: absolute;
 }
 
-.data__btn:hover{
-    background-color: #DDAE71;
+.data__btn:hover {
+    background-color: #ddae71;
     transition: 0.3s;
 }
 
-.margin{
+.margin {
     margin-bottom: 22rem;
 }
-

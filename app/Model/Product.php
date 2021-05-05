@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -50,5 +51,8 @@ class Product extends Model
             ->paginate(Product::paginates);
         return $products;
 
+    }
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 }

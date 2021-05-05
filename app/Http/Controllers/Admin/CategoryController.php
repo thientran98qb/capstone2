@@ -8,10 +8,12 @@ use App\Http\Requests\CategoryRequest;
 use App\Model\Category;
 use Illuminate\Support\Str;
 use App\Components\Recusive;
+use App\Traits\UploadImageTrait;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
+    use UploadImageTrait;
     protected $category;
 
     public function __construct(Category $category)
@@ -54,6 +56,10 @@ class CategoryController extends Controller
     {
         $data = $request->except(['_token']);
         $dataParentid = (empty($data['parent_id'])) ? 0 : $data['parent_id'];
+        $dataImg = $this->storageTraitUpload($request,'image_category','categories');
+            if(!empty($dataImg)){
+                $this->category->img_category= $dataImg['file_path'];
+            }
         if(!empty($data)){
             $this->category->category_name = $data["category_name"];
             $this->category->slug = Str::slug($data['category_name']);
@@ -102,10 +108,15 @@ class CategoryController extends Controller
      */
     public function update(CategoryRequest $request, $id)
     {
+        $data =[];
         $itemCategory = $this->category->findOrFail($id);
+        $dataImg = $this->storageTraitUpload($request,'image_category','categories');
+        $img_cate =!empty($dataImg) ? $dataImg['file_path'] : '';
+        // dd($img_cate);
         $data =  [
             'category_name' => $request->category_name,
-            'parent_id' => $request->parent_id
+            'parent_id' => $request->parent_id,
+            'img_category' => $img_cate
         ];
         $itemCategory->update($data);
         toast('Your Category as been updated!','success');

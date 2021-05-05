@@ -10,7 +10,7 @@
     <div class="container-fluid">
       <div class="row ">
           <div class="col">
-            <form action="{{route('admin.category.store')}}" method="post">
+            <form action="{{route('admin.category.store')}}" enctype="multipart/form-data" method="post">
               @csrf
                 <div class="form m-3">
                     <div class="form-group">
@@ -27,6 +27,10 @@
                             <option value="0">Root</option>
                             {!! $htmlOption !!}
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Image Thumb</label>
+                        <input type="file" placeholder="Image Category" name="image_category" class="form-control col-md-4">
                     </div>
                     <div class="mt-4">
                         <input type="submit" value="Add Category" class="btn btn-warning">

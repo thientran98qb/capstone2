@@ -146,7 +146,9 @@
                             @foreach ($products as $product)
                             <div class="col l-4 m-4 c-12">
                                 <div class="popular__list">
-                                    <img src="{{$product->product_image}}" alt="" class="list__img">
+                                    <a href="{{route('customer.product.index',$product->id)}}">
+                                        <img src="{{$product->product_image}}" alt="" class="list__img">
+                                    </a>
                                     <div class="newlist__data">
                                         <a href="#" class="data__category">{{$product->category->category_name}}</a>
 

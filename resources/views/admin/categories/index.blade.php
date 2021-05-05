@@ -16,6 +16,7 @@
               <thead>
                 <tr>
                   <th>Category name</th>
+                  <th>Thumb</th>
                   <th>Action</th>
                 </tr>
               </thead>

@@ -75,6 +75,6 @@
 @endsection
 @section('js')
     <script src="{{ asset('vendor/select2/select2.min.js') }}"></script>
-   <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/5vpl923wc92zcmi0pzv4l1jrq85qt6ulh8st9mu4osx7ywow/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
    <script src="{{ asset('admins/product/add/add_product.js') }}"></script>
 @endsection

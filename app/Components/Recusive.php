@@ -30,6 +30,9 @@ class Recusive{
                 "<tr>
                     <td class='text-left font-weight-bold'>". $text.$value['category_name']."</td>
                     <td>
+                            <img src='".$value['img_category']."' class'img_product image_slide' style='width:200px;height:100px'>
+                        </td>
+                    <td>
                         <a href=" .route('admin.category.edit',$value['id']). " class='btn btn-success'>Edit</a>
                         <meta name='csrf-token' content=". csrf_token() .">
                         <form action=".route('admin.category.destroy',$value['id'])." method='post' class='d-inline delete_category'>

@@ -116,7 +116,11 @@ Route::group(['middleware' => 'locale'], function() {
         Route::get('addcart/{id}','CartController@addCart')->name('add.cart');
         Route::get('changeitem/{id}','CartController@changeItem')->name('change.item.cart');
         Route::get('removeitem/{id}','CartController@removeItem')->name('remove.item.cart');
+        Route::get('/product/{id}','ProductController@index')->name('product.index');
         Route::middleware(['auth'])->group(function () {
+            Route::post('/product/comment','ProductController@getComment')->name('product.commet');
+            Route::post('comment/update', 'ProductController@update')->name('comment.update');
+    Route::delete('comment/destroy', 'ProductController@destroy')->name('comment.destroy');
             Route::get('/checkout','CheckoutController@index')->name('checkout');
             Route::post('/order','CheckoutController@orders')->name('orders');
         });

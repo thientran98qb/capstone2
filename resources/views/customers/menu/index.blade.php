@@ -31,8 +31,7 @@
                 @foreach ($categories as $category)
                 <div id="cate-{{$category->id}}" class="menu__top" data-aos="fade-up">
                     <div class="menu__top-title">
-                        <div class="menu__top-img pt-img">
-                            <!-- <img src="./assets/img/menu-burgers.jpg" alt=""> -->
+                        <div class="menu__top-img pt-img" style="background-image: url({{asset('frontend/assets/img/pz-img.jpg')}})">
                         </div>
                         <h2>{{$category->category_name}}</h2>
                     </div>

@@ -10,7 +10,7 @@
     <div class="container-fluid">
       <div class="row ">
           <div class="col">
-            <form action="{{route('admin.category.update',$itemCategory->id)}}" method="post">
+            <form action="{{route('admin.category.update',$itemCategory->id)}}" method="post" enctype="multipart/form-data">
               @csrf
                 <div class="form m-3">
                     <div class="form-group">
@@ -25,6 +25,10 @@
                            @endif
                             {!! $htmlOptions !!}
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Image Thumb</label>
+                        <input type="file" placeholder="Image Category" name="image_category" class="form-control col-md-4">
                     </div>
                     <div class="mt-4">
                         <input type="submit" value="Edit Category" class="btn btn-warning">
