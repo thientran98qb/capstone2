@@ -113,6 +113,8 @@
 }
 /* end checkout  */
 
+
+
 /* Tablet*/
 @media (min-width:740px) and (max-width:1023px){
     .hide-on-tablet{
@@ -182,6 +184,19 @@
     } */
     /* end dish menu  */
 
+    /* order  */
+    .table {
+        padding: 5rem 0 44rem;
+        background-color: #fff;
+    }
+
+    .content-table th, .content-table td {
+        padding: 1.2rem 3.5rem;
+    }
+
+    .content-table {
+        margin: 8rem 0;
+    }
     
 }
 /* Mobie */
@@ -407,5 +422,18 @@
 
     .view__reply__more {
         margin: 3rem 0 0;
+    }
+
+      /* order  */
+      .table {
+        padding: 5rem 0 44rem;
+        background-color: #fff;
+    }
+
+    .content-table {
+        margin: 8rem 0;
+    }
+    .content-table th, .content-table td {
+        padding: 1.2rem 1.5rem;
     }
 }
