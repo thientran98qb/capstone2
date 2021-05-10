@@ -71,6 +71,9 @@
                                     <a href="">Profile</a>
                                 </li>
                                 <li class="header__subnav--item">
+                                    <a href="{{route('customer.history.order')}}">Orders</a>
+                                </li>
+                                <li class="header__subnav--item">
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
                                         <button type="submit" style="cursor: pointer">Logout</button>

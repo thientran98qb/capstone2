@@ -40,6 +40,9 @@
                       <th>
                           Địa chỉ
                       </th>
+                      <th>
+                        Payments
+                        </th>
                       <th style="width: 8%">
                         Email
                         </th>
@@ -68,6 +71,19 @@
                         <p>{{ $bill->address }}</p>
                     </td>
                     <td class="project_progress">
+                        @if ($bill->paymentt)
+                            <ul>
+                                <li>Ngân hàng: {{ $bill->paymentt->code_bank}}</li>
+                                <li>Mã thanh toán: {{ $bill->paymentt->code_vnpay}}</li>
+                                <li>Nội dung: {{ $bill->paymentt->note}}</li>
+                                <li>Tổng tiền: {{ $bill->paymentt->money}} VNĐ</li>
+                                <li>Thời gian: {{ date('Y-m-d H:i',strtotime($bill->paymentt->time)) }}</li>
+                            </ul>
+                        @else
+                            <p>Thanh toán khi nhận hàng</p>
+                        @endif
+                    </td>
+                    <td class="project_progress">
                         <p>{{ $bill->user->email }}</p>
                     </td>
                     <td class="project-state">
@@ -80,15 +96,10 @@
                         @endif
                     </td>
                     <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
+                        <a class="btn btn-primary btn-sm" href="{{ route('admin.order.edit',$bill->id)}}">
                             <i class="fas fa-folder">
                             </i>
                             View
-                        </a>
-                        <a class="btn btn-info btn-sm" href="{{ route('admin.order.edit',$bill->id)}}">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Edit
                         </a>
                         <a class="btn btn-danger btn-sm delete_order"
                         data-url="{{route('admin.order.destroy',$bill->id)}}">

@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="{{asset('frontend/assets/css/checkout.css')}}">
 @endsection
 @section('js')
-
-<script src="{{ asset('js/checkout.js') }}"></script>
+    <script src="{{asset('js/reservation.js')}}"></script>
+    <script src="{{ asset('js/checkout.js') }}"></script>
 @endsection
 @section('main')
 <div id="main">
@@ -73,16 +73,11 @@
                                 <div class="form-group">
                                     <div class="form-element col l-4 m-4 c-12">
                                         <label class="custom-control">
-                                            <input type="radio" name="payment_type" class="custom-control-input" value="banking">
-                                            <span class="custom-control-description">Banking</span>
+                                            <input type="radio" name="payment_type" class="custom-control-input" value="Payment on delivery">
+                                            <span class="custom-control-description">Payment on delivery</span>
                                         </label>
                                     </div>
-                                    <div class="form-element col l-4 m-4 c-12">
-                                        <label class="custom-control">
-                                            <input type="radio" name="payment_type" class="custom-control-input" value="credit_card">
-                                            <span class="custom-control-description">Credit Card</span>
-                                        </label>
-                                    </div>
+
                                     <div class="form-element col l-4 m-4 c-12">
                                         <label class="custom-control">
                                             <input type="radio" name="payment_type" class="custom-control-input" value="vnpay">
@@ -91,6 +86,7 @@
                                     </div>
                                 </div>
                             </div>
+                           {{-- <a href="" class="btn-payment">Payment online</a> --}}
                             <div class="delivery">
                                 <h4 class="border-bottom">
                                     <i class="fas fa-truck"></i>
@@ -102,7 +98,7 @@
                                     <div class="form-element col l-6 m-6 c-12">
                                         <label>Đặt bàn trước:</label>
                                         <div class="select">
-                                            <select class="form-control" name="" id="mystuff">
+                                            <select class="form-control" name="selectTable" id="mystuff">
                                                 <option selected disabled>select</option>
                                                 <option value="opt1">Đặt bàn trước</option>
                                                 <option value="opt2">Không</option>
@@ -115,15 +111,15 @@
                                             <div class="form-group">
                                                 <div class="form-element col l-6 m-6 c-12">
                                                     <label>Date:</label>
-                                                    <input type="date" class="form-control">
+                                                    <input type="date" class="form-control" name="date_order_table">
                                                 </div>
                                                 <div class="form-element col l-6 m-6 c-12">
                                                     <label>Time:</label>
-                                                    <input type="time" class="form-control">
+                                                    <input type="time" class="form-control" name="time_order_table">
                                                 </div>
                                                 <div class="form-element col l-6 m-6 c-12">
                                                     <label>Quantity:</label>
-                                                    <select name="" id="" class="form-control">
+                                                    <select class="form-control" name = "quantity" id="selectQuantity" data-url="{{route('filter.table')}}">
                                                         <option value = "hour-select">Select quantity</option>
                                                         <option value = "2">2</option>
                                                         <option value = "4">4</option>
@@ -133,12 +129,9 @@
                                                 </div>
                                                 <div class="form-element col l-6 m-6 c-12">
                                                     <label>Table name:</label>
-                                                    <select name="" id="" class="form-control">
-                                                        <option value = "hour-select">Select quantity</option>
-                                                        <option value = "2">2</option>
-                                                        <option value = "4">4</option>
-                                                        <option value = "6">6</option>
-                                                        <option value = "8">8</option>
+                                                    <select class="form-control" name = "table" id="opt_table">
+                                                        <option value = "hour-select">Select table</option>
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -191,6 +184,7 @@
                                                 }
                                             @endphp
                                             <span class="bill__sumary-product">${{$total}}</span>
+                                            <input type="hidden" name="amount" value="{{$total}}">
                                         </div>
                                     </div>
                                     <hr>
@@ -221,6 +215,7 @@
                             <span>Order now!</span>
                         </button>
                     </div>
+
                 </div>
             </form>
             </div>

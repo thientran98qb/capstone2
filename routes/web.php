@@ -122,7 +122,10 @@ Route::group(['middleware' => 'locale'], function() {
             Route::post('comment/update', 'ProductController@update')->name('comment.update');
     Route::delete('comment/destroy', 'ProductController@destroy')->name('comment.destroy');
             Route::get('/checkout','CheckoutController@index')->name('checkout');
+            Route::get('/historyorder','CheckoutController@historyOrder')->name('history.order');
             Route::post('/order','CheckoutController@orders')->name('orders');
+            Route::post('/paymentvnp','PaymentVnpayController@create')->name('payment.vnpay');
+            Route::get('/returnvnp','PaymentVnpayController@return')->name('vnpay.return');
         });
 
     });

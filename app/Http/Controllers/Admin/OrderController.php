@@ -21,14 +21,21 @@ class OrderController extends Controller
     }
 
     public function index(){
-        $bills = $this->bill->with('user')->get();
+        $bills = $this->bill->with('user','paymentt')->get();
+
         return view('admin.orders.index',compact('bills'));
     }
 
     public function edit($id){
+        $arrId = [];
         $bill = $this->bill->with('user')->get()->find($id);
         $detail_bill = $this->bill->with(['products'])->get()->find($id);
-        return view('admin.orders.detail',compact('bill','detail_bill'));
+        foreach ($detail_bill->products as $key => $value) {
+           $arrId[] = $value->pivot->id;
+        }
+        $order_table = DB::table('order_food_tables')->join('tables','order_food_tables.table_id','=','tables.id')->where('bill_detail_id',$arrId[0])->first();
+        // dd($order_table->name);
+        return view('admin.orders.detail',compact('bill','detail_bill','order_table'));
     }
 
     public function updateStatus(Request $request, $id){

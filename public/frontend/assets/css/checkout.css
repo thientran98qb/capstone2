@@ -306,3 +306,15 @@ select:focus {
     border: 1px solid transparent;
     border-radius: 0.25rem;
 }
+.btn-payment {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    border: 1px solid;
+    display: inline-block;
+    padding: 10px 15px;
+}
+.btn-payment:hover {
+    background-color: black;
+    color: #fff;
+}

@@ -25,7 +25,7 @@ class Product extends Model
     }
 
     public function bills() {
-        return $this->belongsToMany(Bill::class,'bill_details','product_id','bill_id')->withPivot('quantity','desc');
+        return $this->belongsToMany(Bill::class,'bill_details','product_id','bill_id')->withPivot('quantity','desc','id');
     }
     public function getProductSearch($request)
     {

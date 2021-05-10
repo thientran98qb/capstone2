@@ -50,8 +50,45 @@
                 </table>
               </div>
             </div>
+
             <!-- /.card -->
           </div>
+          @if (isset($order_table) && !empty($order_table) )
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Thông tin bàn</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Thông tin bàn</th>
+                      <th>{{ $order_table->name }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Ngày đặt bàn</td>
+                      <td>{{$order_table->date_order_to}}</td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian đặt</td>
+                        <td>{{$order_table->time_order}}</td>
+                      </tr>
+                      <tr>
+                        <td>Số lượng</td>
+                        <td>{{$order_table->quantity}}</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- /.card -->
+          </div>
+          @endif
         </div>
         <div class="row">
           <div class="col-12">
