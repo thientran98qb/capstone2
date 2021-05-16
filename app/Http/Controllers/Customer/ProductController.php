@@ -69,4 +69,16 @@ class ProductController extends Controller
         $response = $commetRecusive->commentRecusive($comments);
         return $response;
     }
+
+    public function postPost(Request $request)
+    {
+        request()->validate(['rate' => 'required']);
+        $post = $this->product->find($request->id);
+        $rating = new \willvincent\Rateable\Rating;
+        $rating->rating = $request->rate;
+        $rating->user_id = Auth::user()->id;
+        $post->ratings()->save($rating);
+
+        return redirect()->back();
+    }
 }

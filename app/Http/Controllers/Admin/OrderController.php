@@ -41,7 +41,7 @@ class OrderController extends Controller
     public function updateStatus(Request $request, $id){
         $status = $request->status;
         $bill = $this->bill->find($id)->update([
-            'note' => $status
+            'status' => $status
         ]);
         return redirect()->route('admin.order.index');
     }

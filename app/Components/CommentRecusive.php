@@ -36,10 +36,10 @@ class CommentRecusive{
                 if(Auth::check()){
 
                     if(Auth::user()->can('update', $comment)){
-                        $this->html .= "<button class=\"btn btn-light\" onClick=\"edit($comment->id)\">Edit</button>";
+                        $this->html .= "<a class=\"btn btn-light\" onClick=\"edit($comment->id)\">Edit</a>";
                     }
                     if(Auth::user()->can('delete', $comment)){
-                        $this->html .= "<button class=\"btn btn-light\" onClick=\"destroy($comment->id)\">Delete</button>";
+                        $this->html .= "<a class=\"btn btn-light\" onClick=\"destroy($comment->id)\">Delete</a>";
                     }
                 }
                 $this->html .= "<div id=\"text{$comment->id}\"></div>";

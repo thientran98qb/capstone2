@@ -24,8 +24,9 @@ class SlideRequest extends FormRequest
     public function rules()
     {
         return [
-            'slide_name' => 'required',
-            'desc_slide' => 'required',
+            'slide_name' => 'required|min:3|max:50',
+            'desc_slide' => 'required|min:3|max:50',
+            'image_slide'=>'required'
         ];
     }
 }

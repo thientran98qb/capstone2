@@ -1,7 +1,22 @@
 <div class="col l-12 m-12 c-12">
-    {{-- <div class="cmt__heading">
-        <h4>96 đánh giá</h4>
-    </div> --}}
+    <div class="cmt__heading">
+        <div class="rating">
+
+            <form action="{{route('customer.product.rating')}}" method="POST">
+                @csrf
+                <input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1" value="{{ $product->userAverageRating }}" data-size="xs">
+
+                <input type="hidden" name="id" required="" value="{{ $product->id }}">
+
+                <span class="review-no" style="color: #fff">{{ $product->ratings->groupBy('user_id')->count('user_id') }} user reviews</span>
+
+                <br/>
+
+                <button type="submit" class="btn btn-success">Submit Review</button>
+            </form>
+
+        </div>
+    </div>
     <div class="cmt__box">
             @if (Auth::check())
         <img src="https://lh3.googleusercontent.com/a-/AOh14Gin9YErbXWxwOs0FJ9CDU4MCW5rLLAUbcBmBvaO=s400" alt="">

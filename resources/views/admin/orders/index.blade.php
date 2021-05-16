@@ -87,9 +87,9 @@
                         <p>{{ $bill->user->email }}</p>
                     </td>
                     <td class="project-state">
-                        @if ($bill->note == 'done')
+                        @if ($bill->status == 2)
                         <span class="badge badge-success">Success</span>
-                        @elseif($bill->note =='pending')
+                        @elseif($bill->status ==1)
                         <span class="badge badge-warning">Pending</span>
                         @else
                         <span class="badge badge-danger">Wating....</span>

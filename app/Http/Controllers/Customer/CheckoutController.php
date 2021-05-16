@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderRequest;
+use App\Jobs\SendBillMail;
+use App\Mail\WelcomeEmail;
 use App\Model\Bill;
 use Carbon\Carbon;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -19,13 +23,14 @@ class CheckoutController extends Controller
         $this->bill = $bill;
     }
     public function index(){
+        $user = Auth::user();
         $carts =
         session()->has('cart') ?
         session()->get('cart') : '';
-        return view('customers.orders.checkout',compact('carts'));
+        return view('customers.orders.checkout',compact('carts','user'));
     }
 
-    public function orders(Request $request){
+    public function orders(OrderRequest $request){
         $user = auth()->user();
         $now = Carbon::now();
         $cart = session()->get('cart');
@@ -33,6 +38,7 @@ class CheckoutController extends Controller
             $data = [
                 'user_id' => $user->id,
                 'date_order' => $now->toDateTimeString(),
+                'fullname'=>$request->fullname,
                 'phone_number'=> $request->phone_number,
                 'address' => $request->address,
                 'total_price'=>$request->total_price,
@@ -85,6 +91,9 @@ class CheckoutController extends Controller
                 }
 
             }
+            $billEmail = $this->bill->find($bill->id);
+            $name = Auth::user();
+            dispatch(new SendBillMail($billEmail,$name));
             return redirect()->back()->with('success',' Bạn đã đặt hàng thành công! Chúng tôi sẽ gửi email xác nhận ngay lập tức');
         }
 
@@ -93,5 +102,11 @@ class CheckoutController extends Controller
     public function historyOrder(){
         $bills = $this->bill->where('user_id',Auth::user()->id)->with('user')->get();
         return view('customers.orders.history_order',compact('bills'));
+    }
+
+    public function sendMail(){
+        $bill = $this->bill->where('user_id',Auth::user()->id)->with('user')->get();
+        $name = Auth::user();
+        dispatch(new SendBillMail($bill,$name));
     }
 }

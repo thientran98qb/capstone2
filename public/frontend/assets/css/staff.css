@@ -1,0 +1,142 @@
+#main{
+    margin-top: 7rem;
+    background-color: #F3F4F4;
+}
+
+.table-staff{
+    min-height: 50rem;
+    margin: 1rem 0;
+    background-color: #FFF;
+    max-height: 70rem;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.table-staff-active{
+    background-color: #00FF7F;
+    border: none;
+}
+
+.table-btn{
+    padding: 5rem 0;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 2rem;
+    max-height: 12rem;
+    font-weight: 500;
+}
+
+.select{
+    color: #495057;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.form-control{
+    display: block;
+    box-shadow: inset 1px 1px 2px 0 rgb(40 43 46 / 6%);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-weight: 300;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    height: 4.5rem;
+    /* flex: 1; */
+    width: 100%;
+    font-size: 1.4rem;
+    outline-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.select i{
+    transform: translate3d(0,-50%,0);
+    position: absolute;
+    top: 50%;
+    display: block;
+    right: 2%;
+    font-size: 1.4rem;
+    /* font-size: .8rem; */
+    color: #495057;
+}
+
+.number-select{
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    height: 4.5rem;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    outline-color: var(--primary-color);
+}
+
+
+.total-cost,
+.payment-control,
+.add-control{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    height: 4.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 2px solid #DDAE71;
+    color: #fff;
+    background-color: #282B2E;
+    margin: 1rem 0;
+}
+
+.payment-control{
+    width: auto;
+}
+
+.total-cost{
+    width: auto;
+    background-color: #fff;
+    display: inline-block;
+    color: #000;
+    font-size: 1.4rem;
+    line-height: 1.7
+}
+
+.table-control table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+.table-control{
+    background:#fff;
+    max-height: 57.5rem;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.table-control table{
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+
+.table-control th, td {
+    padding: 12px;
+  }
+
+.table-control table th{
+    font-size: 2rem;
+}
+
+.end-control{
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.end-control label{
+    line-height: 4.3;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+}

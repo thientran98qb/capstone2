@@ -117,6 +117,7 @@ Route::group(['middleware' => 'locale'], function() {
         Route::get('changeitem/{id}','CartController@changeItem')->name('change.item.cart');
         Route::get('removeitem/{id}','CartController@removeItem')->name('remove.item.cart');
         Route::get('/product/{id}','ProductController@index')->name('product.index');
+        Route::post('/product','ProductController@postPost')->name('product.rating');
         Route::middleware(['auth'])->group(function () {
             Route::post('/product/comment','ProductController@getComment')->name('product.commet');
             Route::post('comment/update', 'ProductController@update')->name('comment.update');
@@ -138,7 +139,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/booktable', 'BookTableController@index')->name('book.table');
     Route::get('/filter.table', 'BookTableController@filterTable')->name('filter.table');
     Route::post('/reservation', 'BookTableController@reservationTable')->name('reservation.table');
+    Route::get('/pastorder', 'BookTableController@pastOrder')->name('past.order.table');
 
 });
 Route::get('/auth/{provider}', 'SocialController@redirectToProvider');
 Route::get('/auth/{provide}/callback', 'SocialController@handleProviderCallback');
+
+Route::middleware(['staff-login'])->group(function () {
+    Route::get('/staff','StaffController@index')->name('staff');
+    Route::get('/filterFood','StaffController@filterFood')->name('filter.food');
+    Route::get('/addMenu','StaffController@addMenu')->name('add.menu');
+    Route::get('/fillOrder','StaffController@fillOrder')->name('fill.order');
+});

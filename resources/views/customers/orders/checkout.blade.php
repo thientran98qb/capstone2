@@ -43,22 +43,34 @@
                                     <div class="form-element col l-6 m-6 c-12">
                                         <label>Name:</label>
                                         <input type="text" name="fullname" class="form-control">
+                                        @error('fullname')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
+
                                     <div class="form-element col l-6 m-6 c-12">
                                         <label>Phone number:</label>
                                         <input type="text" name="phone_number" class="form-control">
+                                        @error('phone_number')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
+
                                     <div class="form-element col l-12 m-12 c-12">
                                         <label>Street and number:</label>
                                         <input type="text" name="address" class="form-control">
+                                        @error('address')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
+
                                     <div class="form-element col l-6 m-6 c-12">
                                         <label>City:</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="form-element col l-6 m-6 c-12">
                                         <label>E-mail address:</label>
-                                        <input type="email" name="email_add" class="form-control">
+                                        <input type="email" value="{{$user->email}}" disabled name="email_add" class="form-control">
                                     </div>
                                 </div>
                             </div>

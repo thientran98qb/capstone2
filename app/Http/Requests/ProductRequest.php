@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'product_name' => 'bail|required|unique:products|max:255|min:10',
-            'price' => 'required',
+            'price' => 'required|numeric|min:0|not_in:0',
             'parent_id' => 'required',
             'content' =>'required'
         ];

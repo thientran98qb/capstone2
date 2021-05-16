@@ -5,9 +5,10 @@ namespace App\Model;
 use App\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use willvincent\Rateable\Rateable;
 class Product extends Model
 {
+    use Rateable;
     use SoftDeletes;
     protected $guarded = [];
 

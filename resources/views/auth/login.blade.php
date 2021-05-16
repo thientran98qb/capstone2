@@ -7,6 +7,11 @@
 <div class="main">
     <form action="{{route('login')}}" method="POST" class="form" id="form-2">
         @csrf
+        @if(session()->has('errorLogin'))
+            <div class="alert alert-danger">
+                {{ session()->get('errorLogin') }}
+            </div>
+        @endif
         <h3 class="heading">Login</h3>
         <p class="desc">Let us serve you the best meals ❤️</p>
 

@@ -67,8 +67,16 @@
                         <li class="header__nav--item">
                             <i class="icon-user fas fa-user"></i>{{auth()->user()->name}}
                             <ul class="header__subnav">
+                                @if (Auth()->user()->checkRole('staff') == true)
+                                <li class="header__subnav--item">
+                                    <a href="/staff">Staff</a>
+                                </li>
+                                @endif
                                 <li class="header__subnav--item">
                                     <a href="">Profile</a>
+                                </li>
+                                <li class="header__subnav--item">
+                                    <a href="{{ route('past.order.table') }}">Order Table</a>
                                 </li>
                                 <li class="header__subnav--item">
                                     <a href="{{route('customer.history.order')}}">Orders</a>

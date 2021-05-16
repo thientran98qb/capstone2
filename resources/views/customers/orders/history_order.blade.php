@@ -28,6 +28,15 @@
                     <p>Table: </p>
                     <p>Quantity: </p>
                     <p>Payments: Payment on delivery</p>
+                    <p>Status:
+                        @if ($bill->status == 2)
+                        <span class="badge bg-success">Success</span>
+                        @elseif($bill->status ==1)
+                        <span class="badge bg-warning">Pending</span>
+                        @else
+                        <span class="badge bg-danger">Wating....</span>
+                        @endif
+                    </p>
                 </div>
             </div>
         </div>

@@ -137,9 +137,9 @@
                     <div class="form-inline">
                         <label>Trạng thái giao hàng: </label>
                         <select name="status" class="form-control input-inline" style="width: 200px">
-                            <option value="wait">Chưa giao</option>
-                            <option value="pending">Đang giao</option>
-                            <option value="done">Đã giao</option>
+                            <option value="0">Chưa giao</option>
+                            <option value="1">Đang giao</option>
+                            <option value="2">Đã giao</option>
                         </select>
 
                         <input type="submit" value="Xử lý" class="btn btn-primary">

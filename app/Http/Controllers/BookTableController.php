@@ -40,4 +40,10 @@ class BookTableController extends Controller
         toast('Reservation placed successfully!','success');
         return redirect()->back();
     }
+
+    public function pastOrder(){
+        $user = Auth::user();
+        $table_user = $user->tables()->get();
+        return view('customers.orders.history_table',compact('table_user','user'));
+    }
 }

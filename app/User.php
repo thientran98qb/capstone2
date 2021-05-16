@@ -54,6 +54,13 @@ class User extends Authenticatable
         }
         return false;
     }
+    public function checkRole($roleCheck){
+        $roles = auth()->user()->roles;
+        if($roles->contains('name',$roleCheck)){
+            return true;
+        }
+        return false;
+    }
     public function tables(){
         return $this->BelongsToMany(Table::class,'user_tables','user_id','table_id')->withPivot('phone_number','time','date');
     }
