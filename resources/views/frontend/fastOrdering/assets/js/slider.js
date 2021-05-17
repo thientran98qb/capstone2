@@ -43,6 +43,17 @@ function slidefun(n) {
 }
 
 
+
+function searchclick() {
+	let searchtxt = document.querySelector('.search-txt');
+	let widthnav = document.querySelectorAll('.header__nav--item');
+
+	searchtxt.classList.toggle('search-txt-width');
+	for (i = 0; i < widthnav.length; i++) {
+		widthnav[i].classList.toggle('header__nav--item-toggle');
+	}
+	// widthnav.classList.toggle('header__nav--item-toggle');
+}
 // Scroll 
 
 // const sr = ScrollReveal({
