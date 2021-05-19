@@ -1,0 +1,129 @@
+/* begin about us  */
+.about{
+    margin-top: 3rem;
+}
+
+.about__title{
+    padding: 4rem 0 5rem;
+}
+
+.about__title h1{
+    font-size: 6.75rem;
+    font-weight: 100;
+    color: rgb(56 60 64 / 85%);
+}
+
+.about__title h4{
+    color: #a4a7a9!important;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.about__content{
+    width: 42.5rem;
+    padding-top: 3rem;
+}
+
+.about__content h2{
+    font-size: 5rem;
+    font-weight: 100;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    color: #333333ad;
+}
+
+.about__content p{
+    font-size: 1.4rem;
+    line-height: 1.6;
+    padding-bottom: 2rem;
+
+}
+
+.about__content h4{
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #333333d9;
+    margin-top: 3rem;
+}
+
+.about__btn{
+    text-decoration: none;
+    margin-top: 6rem; 
+    display: inline-block;
+    margin-bottom: 5rem;
+}
+
+.about__btn span{
+    font-size: 1.6rem;
+    text-transform: uppercase; 
+    color: #333;   
+    border: 2px solid #ddae71;  
+    padding: 2rem;
+}
+
+.about__btn span:hover{
+    background-color: #ddae71;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.about__end{
+    position: relative;
+    max-height : 33.2rem;
+    width: 100%;
+}
+
+.about__end-img{
+
+}
+
+.about__text{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.about__text h2{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 100;
+    color: #ffffffb0;
+}
+
+.about__text h5{
+    color: hsla(0,0%,100%,.5);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+.about__end-btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 2.5rem;
+    width: 16rem;
+    position: relative;
+    border: 2px solid #ddae71;
+}
+
+.about__end-btn span{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.about__end-btn:hover{
+    background-color: #ddae71;
+    box-shadow: none;
+    transform: translateY(-2px);
+    outline: none;
+    transition: 0.3s;
+}
