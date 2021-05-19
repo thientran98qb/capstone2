@@ -15,10 +15,10 @@
                     <a class="header__nav--link" href="{{ route('book.table') }}">Book a table</a>
                 </li>
                 <li class="header__nav--item">
-                    <a class="header__nav--link" href="#main">About</a>
+                    <a class="header__nav--link" href="{{route('customer.about.index')}}">About</a>
                 </li>
                 <li class="header__nav--item">
-                    <a class="header__nav--link" href="#footer">Contract</a>
+                    <a class="header__nav--link" href="{{route('customer.contact.index')}}">Contract</a>
                 </li>
             </ul>
 
@@ -60,6 +60,18 @@
             </div>
 
             <div class="header__icon">
+                <!-- search  -->
+                <div class="search">
+                    <form action="{{ route('customer.customer.search') }}" method="get">
+                        @csrf
+                        <input type="text" name="" class="search-txt search-txt-width" placeholder="Search..."/>
+                            <button class="search-btn" type="submit">
+
+                                <i class="fas fa-search"></i>
+                            </button>
+                    </form>
+                </div>
+                <!-- search  -->
                 @include('customers.particular.cart')
                 @if (auth()->user())
                 <div class="user">

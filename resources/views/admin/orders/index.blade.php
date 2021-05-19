@@ -11,7 +11,45 @@
 
     <!-- Main content -->
     <section class="content">
+        <div class="row">
+            <div class="col">
+                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">ĐƠN HÀNG THÀNH CÔNG</div>
+                    <div class="card-body">
+                        <h5 class="card-title">2.680</h5>
+                        <p class="card-text">Đơn hàng giao dịch thành công</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-header">ĐANG XỬ LÝ</div>
+                    <div class="card-body">
+                        <h5 class="card-title">10</h5>
+                        <p class="card-text">Số lượng đơn hàng đang xử lý</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col">
+                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header">DOANH SỐ</div>
+                    <div class="card-body">
+                        <h5 class="card-title">2.5 tỷ</h5>
+                        <p class="card-text">Doanh số hệ thống</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">ĐƠN HÀNG HỦY</div>
+                    <div class="card-body">
+                        <h5 class="card-title">125</h5>
+                        <p class="card-text">Số đơn bị hủy trong hệ thống</p>
+                    </div>
+                </div>
+            </div>
+        </div>
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
@@ -31,20 +69,23 @@
                       <th style="width: 1%">
                           #
                       </th>
-                      <th style="width: 20%">
-                          Tên người orders
+                      <th style="width: 15%">
+                          Fullname
                       </th>
                       <th style="width: 15%">
-                          Team Members
+                          Date Order
                       </th>
                       <th>
-                          Địa chỉ
+                         Address
                       </th>
                       <th>
                         Payments
                         </th>
                       <th style="width: 8%">
                         Email
+                        </th>
+                        <th style="width: 8%">
+                            Total Bill
                         </th>
                       <th style="width: 8%" class="text-center">
                           Status
@@ -85,6 +126,9 @@
                     </td>
                     <td class="project_progress">
                         <p>{{ $bill->user->email }}</p>
+                    </td>
+                    <td class="project_progress">
+                        <p>{{ $bill->total_price }}</p>
                     </td>
                     <td class="project-state">
                         @if ($bill->status == 2)

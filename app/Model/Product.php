@@ -3,6 +3,8 @@
 namespace App\Model;
 
 use App\Comment;
+use App\Table;
+use BeyondCode\Vouchers\Traits\HasVouchers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use willvincent\Rateable\Rateable;
@@ -55,5 +57,9 @@ class Product extends Model
     }
     public function comments(){
         return $this->hasMany(Comment::class);
+    }
+
+    public function tables(){
+        return $this->belongsToMany(Table::class,'table_products','product_id','table_id')->withPivot('amount','total');
     }
 }

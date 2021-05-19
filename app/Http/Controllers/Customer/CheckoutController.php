@@ -8,11 +8,15 @@ use App\Http\Requests\OrderRequest;
 use App\Jobs\SendBillMail;
 use App\Mail\WelcomeEmail;
 use App\Model\Bill;
+use App\User;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+
+use function GuzzleHttp\Psr7\try_fopen;
 
 class CheckoutController extends Controller
 {
@@ -27,7 +31,16 @@ class CheckoutController extends Controller
         $carts =
         session()->has('cart') ?
         session()->get('cart') : '';
-        return view('customers.orders.checkout',compact('carts','user'));
+
+        $discount = session()->get('coupon')['discount'] ?? 0;
+        $total = 0;
+        if(session()->has('cart')){
+            foreach ($carts as $cart){
+                $total += $cart['total_price'];
+            }
+        }
+        $newSubTotal = $total - $discount;
+        return view('customers.orders.checkout',compact('carts','user','newSubTotal'));
     }
 
     public function orders(OrderRequest $request){
@@ -93,7 +106,9 @@ class CheckoutController extends Controller
             }
             $billEmail = $this->bill->find($bill->id);
             $name = Auth::user();
-            dispatch(new SendBillMail($billEmail,$name));
+            // dispatch(new SendBillMail($billEmail,$name));
+            session()->forget('cart');
+            session()->forget('coupon');
             return redirect()->back()->with('success',' Bạn đã đặt hàng thành công! Chúng tôi sẽ gửi email xác nhận ngay lập tức');
         }
 
@@ -109,4 +124,5 @@ class CheckoutController extends Controller
         $name = Auth::user();
         dispatch(new SendBillMail($bill,$name));
     }
+
 }

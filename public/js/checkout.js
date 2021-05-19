@@ -11,3 +11,18 @@ $("#mystuff").on("change", function () {
     //show only element connected to selected option
     $(selector).removeClass("hidden");
 });
+// $(".form-voucher").on("submit", function (e) {
+//     e.preventDefault();
+//     const url = $(this).attr("action");
+//     const code = $(".voucher").val();
+//     const price = $(".total_pricee").val();
+//     $.ajax({
+//         url: url,
+//         method: "GET",
+//         data: { code: code, price: price },
+//         success: function (success) {
+//             console.log(success);
+//         },
+//         error: function (error) {},
+//     });
+// });

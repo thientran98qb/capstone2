@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Bill;
 use App\Model\Category;
 use App\Model\Product;
 use App\Table;
+use Barryvdh\DomPDF\Facade as PDF;
+use Carbon\Carbon;
 use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,7 +62,43 @@ class StaffController extends Controller
     }
     public function fillOrder(Request $request){
         $idTable = $request->idTable;
+        session()->put('table_id',$idTable);
         $bill = DB::table('table_products')->join('products','table_products.product_id','=','products.id')->where('table_id',$idTable)->get();
         return response()->json($bill);
+    }
+
+    public function bill(){
+        $table_id = session()->has('table_id') ? session()->get('table_id') : '';
+        $bills = Table::with('products')->find($table_id);
+
+        return view('customers.staff.bill',compact('bills'));
+    }
+
+    public function pdf(){
+        $table_id = session()->has('table_id') ? session()->get('table_id') : '';
+        $bills = Table::with('products')->find($table_id);
+        $data['title'] = 'Bill List';
+        $data['bills'] =  $bills;
+
+        $pdf = PDF::loadView('customers.staff.pdf',$data)->setPaper('a4','portrait');
+
+        return $pdf->stream('bills.pdf');
+    }
+
+    public function saveBill(Request $request){
+        $total_bill = $request->total_bill;
+        $table_id = session()->has('table_id') ? session()->get('table_id') : '';
+        $dt = Carbon::now();
+        Bill::create([
+            'user_id' => Auth::user()->id,
+            'date_order' => $dt->toDateTimeString(),
+            'phone_number' => '0815858468',
+            'address' => 'POWA Restaurant',
+            'total_price' => $total_bill,
+            'payment' => 'In restaurant',
+        ]);
+        DB::table('table_products')->where('table_id',$table_id)->delete();
+        session()->forget('table_id');
+        return redirect()->route('staff');
     }
 }

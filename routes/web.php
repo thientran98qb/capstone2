@@ -66,6 +66,14 @@ Route::group(['middleware' => 'locale'], function() {
                 Route::post('/update/{id}','SettingController@update')->name('setting.update');
                 Route::get('/setting/delete/{id}', 'SettingController@delete')->name('delete_setting');
             });
+            Route::prefix('page')->group(function(){
+                Route::get('','PageController@index')->name('page.index');
+                Route::get('/add','PageController@create')->name('page.create');
+                Route::post('/add','PageController@store')->name('page.store');
+                Route::get('/edit/{id}','PageController@edit')->name('page.edit');
+                // Route::post('/update/{id}','PageController@update')->name('setting.update');
+                // Route::get('/setting/delete/{id}', 'PageController@delete')->name('delete_setting');
+            });
             Route::prefix('user')->group(function(){
                 Route::get('','UserController@index')->name('user.index');
                 Route::get('/add','UserController@create')->name('user.create');
@@ -87,6 +95,14 @@ Route::group(['middleware' => 'locale'], function() {
                 Route::get('/add','PermissionController@create')->name('per.create');
                 Route::post('/add','PermissionController@store')->name('per.store');
                 Route::get('/edit/{id}','PermissionController@edit')->name('per.edit');
+            });
+            Route::prefix('voucher')->group(function(){
+                Route::get('','VoucherController@index')->name('voucher.index');
+
+                Route::get('/add','VoucherController@create')->name('voucher.create');
+                Route::post('/add','VoucherController@store')->name('voucher.store');
+                Route::post('/delete/{id}','VoucherController@delete')->name('voucher.delete');
+
             });
             Route::prefix('table')->group(function(){
                 Route::get('','TableController@index')->name('table.index');
@@ -112,12 +128,17 @@ Route::group(['middleware' => 'locale'], function() {
 
     });
     Route::group(['prefix' => 'customer','namespace'=>'Customer','as'=>'customer.'], function () {
+        Route::get('/about','AboutController@index')->name('about.index');
+        Route::get('/contact','ContactController@index')->name('contact.index');
         Route::resource('menu', 'MenuController');
         Route::get('addcart/{id}','CartController@addCart')->name('add.cart');
         Route::get('changeitem/{id}','CartController@changeItem')->name('change.item.cart');
         Route::get('removeitem/{id}','CartController@removeItem')->name('remove.item.cart');
         Route::get('/product/{id}','ProductController@index')->name('product.index');
         Route::post('/product','ProductController@postPost')->name('product.rating');
+
+        Route::get('/search','ProductController@searchIndex')->name('customer.search');
+        Route::get('/searchitem','ProductController@search')->name('search');
         Route::middleware(['auth'])->group(function () {
             Route::post('/product/comment','ProductController@getComment')->name('product.commet');
             Route::post('comment/update', 'ProductController@update')->name('comment.update');
@@ -125,6 +146,7 @@ Route::group(['middleware' => 'locale'], function() {
             Route::get('/checkout','CheckoutController@index')->name('checkout');
             Route::get('/historyorder','CheckoutController@historyOrder')->name('history.order');
             Route::post('/order','CheckoutController@orders')->name('orders');
+            Route::get('/voucher','VoucherController@voucher')->name('voucher');
             Route::post('/paymentvnp','PaymentVnpayController@create')->name('payment.vnpay');
             Route::get('/returnvnp','PaymentVnpayController@return')->name('vnpay.return');
         });
@@ -150,4 +172,8 @@ Route::middleware(['staff-login'])->group(function () {
     Route::get('/filterFood','StaffController@filterFood')->name('filter.food');
     Route::get('/addMenu','StaffController@addMenu')->name('add.menu');
     Route::get('/fillOrder','StaffController@fillOrder')->name('fill.order');
+    Route::get('/bill','StaffController@bill')->name('bill.order');
+    Route::get('/pdf','StaffController@pdf')->name('bill.pdf');
+    Route::get('/save','StaffController@saveBill')->name('bill.save');
+
 });

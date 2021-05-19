@@ -4,6 +4,8 @@ namespace App;
 
 use App\Model\Bill;
 use App\Model\Role;
+use BeyondCode\Vouchers\Traits\CanRedeemVouchers;
+use BeyondCode\Vouchers\Traits\HasVouchers;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;

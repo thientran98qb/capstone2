@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -80,5 +81,31 @@ class ProductController extends Controller
         $post->ratings()->save($rating);
 
         return redirect()->back();
+    }
+    public function search(Request $request)
+    {
+        $products = $this->product->getProductSearch($request);
+        return view('customers.search.index',compact('products'));
+
+    }
+    public function searchIndex(Request $request){
+        $status = $request->case;
+        if($status == 'rate'){
+            $products= $this->product->select('products.*')->leftJoin('ratings', 'products.id', '=', 'ratings.rateable_id')
+            ->addSelect(DB::raw('AVG(ratings.rating) as average_rating'))
+            ->groupBy('products.id')
+            ->orderBy('average_rating', 'desc')
+            ->paginate(4);
+        }elseif($status == 'name'){
+            $products= $this->product->orderBy('product_name')->paginate(4);
+        }else{
+            $products= $this->product->paginate(4);
+        }
+        return view('customers.search.index',compact('products'));
+    }
+
+    public function voucher($product_id){
+        $product = $this->product->findOrFail($product_id);
+        $voucher = $product->createVoucher(['discount_percent' => 10]);
     }
 }

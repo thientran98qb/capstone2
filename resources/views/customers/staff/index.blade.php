@@ -78,7 +78,7 @@
                     <label>Total:</label>
                     <div class="total-cost">0</div>
                     <button class="payment-control update-bill">Update</button>
-                    <button class="payment-control">payment</button>
+                    <a class="payment-control" href="{{route('bill.order')}}">Payment</a>
                 </div>
 
             </div>

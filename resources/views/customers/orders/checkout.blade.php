@@ -31,6 +31,16 @@
                            {{ session()->get('success') }}
                         </div>
                         @endif
+                        @foreach ($errors->all() as $error)
+
+                        <div class="alert alert-danger">{{ $error }}</div>
+
+                        @endforeach
+                        @if (session('success_message'))
+                        <div class="alert alert-success">
+                            {{ session('success_message') }}
+                        </div>
+                        @endif
                         <div class="checkout">
                             <div class="checkout__title">
                                 <h4 class="border-bottom">
@@ -190,22 +200,30 @@
                                         </div>
                                         <div class="col l-5">
                                             @php
-                                                $total = 0;
+                                            $total = 0;
+                                               if(session()->has('cart')){
                                                 foreach ($carts as $cart){
                                                     $total += $cart['total_price'];
                                                 }
+                                               }
                                             @endphp
                                             <span class="bill__sumary-product">${{$total}}</span>
                                             <input type="hidden" name="amount" value="{{$total}}">
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="row f-end">
+                                    <div class="row f-end" style="margin-bottom: 10px">
                                         <div class="col l-7 text-right">
-                                            Devliery:
+                                           @if (session()->has('coupon'))
+                                           Discount({{session()->get('coupon')['name']}}):
+                                           @endif
                                         </div>
                                         <div class="col l-5">
-                                            <span class="bill__sumary-product">$0</span>
+                                            <span class="bill__sumary-product">-$
+                                                @if (session()->has('coupon'))
+                                                {{session()->get('coupon')['discount']}}
+                                                @endif
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="row f-end">
@@ -214,8 +232,8 @@
 
                                         </div>
                                         <div class="col l-5">
-                                            <input type="hidden" name="total_price" value="{{$total}}">
-                                            <span class="bill__sumary-product" >${{$total}}</span>
+                                            <input type="hidden" name="total_price" value="{{$newSubTotal}}">
+                                            <span class="bill__sumary-product" >${{$newSubTotal}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -230,6 +248,13 @@
 
                 </div>
             </form>
+            @if (!session()->has('coupon'))
+            <form action="{{ route('customer.voucher') }}" class="form-voucher">
+                @csrf
+                <input type="text" name="voucher" class="voucher" id="voucher">
+                <input type="submit" value="test Voucher">
+            </form>
+            @endif
             </div>
         </div>
     </div>
