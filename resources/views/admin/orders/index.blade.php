@@ -16,7 +16,7 @@
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                     <div class="card-header">ĐƠN HÀNG THÀNH CÔNG</div>
                     <div class="card-body">
-                        <h5 class="card-title">2.680</h5>
+                        <h5 class="card-title">{{$count[0]}}</h5>
                         <p class="card-text">Đơn hàng giao dịch thành công</p>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
                     <div class="card-header">ĐANG XỬ LÝ</div>
                     <div class="card-body">
-                        <h5 class="card-title">10</h5>
+                        <h5 class="card-title">{{$count[1]}}</h5>
                         <p class="card-text">Số lượng đơn hàng đang xử lý</p>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
                     <div class="card-header">DOANH SỐ</div>
                     <div class="card-body">
-                        <h5 class="card-title">2.5 tỷ</h5>
+                        <h5 class="card-title">{{$revenue}}</h5>
                         <p class="card-text">Doanh số hệ thống</p>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                     <div class="card-header">ĐƠN HÀNG HỦY</div>
                     <div class="card-body">
-                        <h5 class="card-title">125</h5>
+                        <h5 class="card-title">{{$count[2]}}</h5>
                         <p class="card-text">Số đơn bị hủy trong hệ thống</p>
                     </div>
                 </div>
@@ -140,11 +140,13 @@
                         @endif
                     </td>
                     <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="{{ route('admin.order.edit',$bill->id)}}">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
+                       @if ($bill->payment != 'In restaurant')
+                       <a class="btn btn-primary btn-sm" href="{{ route('admin.order.edit',$bill->id)}}">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                    </a>
+                       @endif
                         <a class="btn btn-danger btn-sm delete_order"
                         data-url="{{route('admin.order.destroy',$bill->id)}}">
                             <i class="fas fa-trash">

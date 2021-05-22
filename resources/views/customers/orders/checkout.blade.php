@@ -182,9 +182,9 @@
                                            <h5 class="cart-info-name">{{$cart['product_name']}}</h5>
                                            <span class="cart-info-quantily" >{{$cart['quantity']}}</span>
                                            <span class="cart-info-x">x</span>
-                                           <span class="cart-info-price">${{$cart['price']}}</span>
+                                           <span class="cart-info-price">{{number_format($cart['price'])}} VND</span>
                                        </div>
-                                       <span class="cart-info-price">${{$cart['total_price']}}</span>
+                                       <span class="cart-info-price">{{number_format($cart['total_price'])}} VND</span>
                                        <div class="cart-info-remove">
                                            <i class="fas fa-times"></i>
                                        </div>
@@ -207,7 +207,7 @@
                                                 }
                                                }
                                             @endphp
-                                            <span class="bill__sumary-product">${{$total}}</span>
+                                            <span class="bill__sumary-product">{{number_format($total)}} VND</span>
                                             <input type="hidden" name="amount" value="{{$total}}">
                                         </div>
                                     </div>
@@ -219,7 +219,7 @@
                                            @endif
                                         </div>
                                         <div class="col l-5">
-                                            <span class="bill__sumary-product">-$
+                                            <span class="bill__sumary-product">
                                                 @if (session()->has('coupon'))
                                                 {{session()->get('coupon')['discount']}}
                                                 @endif
@@ -233,7 +233,7 @@
                                         </div>
                                         <div class="col l-5">
                                             <input type="hidden" name="total_price" value="{{$newSubTotal}}">
-                                            <span class="bill__sumary-product" >${{$newSubTotal}}</span>
+                                            <span class="bill__sumary-product" >{{number_format($newSubTotal)}} VND</span>
                                         </div>
                                     </div>
                                 </div>

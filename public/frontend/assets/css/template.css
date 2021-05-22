@@ -137,8 +137,13 @@
     line-height: 1.6;
     width: 0px;
     font-weight: 500;
+    position: absolute;
+    top: 15%;
 }
-
+.header__icon .search form {
+    position: relative;
+    width: 24rem;
+}
 ::placeholder {
     color: #fff;
     opacity: 1;

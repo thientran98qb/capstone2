@@ -17,7 +17,7 @@ class UserOrder extends Notification
      *
      * @return void
      */
-    public function __construct(Bill $bill)
+    public function __construct($bill)
     {
         $this->bill = $bill;
     }
@@ -30,7 +30,7 @@ class UserOrder extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
@@ -41,10 +41,10 @@ class UserOrder extends Notification
      */
     public function toMail($notifiable)
     {
-        $urlOrders =url('/customer/historyorder');
-        return (new MailMessage)
-                    ->subject('Orders successfull')
-                    ->markdown('customers.emails.orders',['url'=>$urlOrders,'notifiable'=>$notifiable]);
+        return ((new MailMessage)
+        ->line('The introduction to the notification.')
+        ->action('Notification Action', url('/'))
+        ->line('Thank you for using our application!'));
     }
 
     /**
@@ -55,8 +55,6 @@ class UserOrder extends Notification
      */
     public function toArray($notifiable)
     {
-        return [
-            //
-        ];
+        return $this->bill;
     }
 }

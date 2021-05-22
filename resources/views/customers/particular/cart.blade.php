@@ -26,8 +26,8 @@
                         <h5 class="cart-info-name">{{$item['product_name']}}</h5>
                         <input type="number"class="cart-info-quantily quantity" style="width: 50px" value="{{$item['quantity']}}" data-idd="{{$item['id']}}" data-urlItem="{{ route('customer.change.item.cart',$item['id']) }}" min="1">
                         <span class="cart-info-x">x</span>
-                        <span class="cart-info-price">${{$item['price']}}</span>
-                        <span style="border-left: 1px solid black;padding:0 0 0 10px" class="cart-info-price totalPrice_{{$item['id']}}">${{$item['total_price']}}</span>
+                        <span class="cart-info-price"> {{number_format($item['price'])}} VND</span>
+                        <span style="border-left: 1px solid black;padding:0 0 0 10px" class="cart-info-price totalPrice_{{$item['id']}}">{{number_format($item['total_price'])}} VND</span>
                     </div>
                     <div class="cart-info-remove">
                         <span class="remove-item-cart" data-idremove="{{$item['id']}}"><i class="fas fa-times"></i></span>

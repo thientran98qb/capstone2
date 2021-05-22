@@ -13,15 +13,15 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class Notify
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
+    protected $data;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -31,6 +31,6 @@ class Notify
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new PrivateChannel('send-message');
     }
 }

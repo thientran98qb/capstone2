@@ -47,7 +47,7 @@ $(".add-control").on("click", function (e) {
                 let htmlRow = "";
                 htmlRow += `<tr id="food_${food.id}">
                     <td class='product-name'>${food.product_name}</td>
-                    <td class="price${food.id}">$${food.price}</td>
+                    <td class="price${food.id}">${food.price} VND</td>
                     <td><input type="number" class="changeAmount" data-id='${
                         food.id
                     }' min="1" style="width:50%;" value="${val.quantity}"></td>
@@ -64,7 +64,7 @@ $(".add-control").on("click", function (e) {
                 // $(htmlRow).insertAfter($("#menu-list").closest("tr"));
                 $("#menu-list").append(htmlRow);
                 const totalPrice = arrMoney.reduce((sum, val) => sum + val, 0);
-                $(".total-cost").text(`$${totalPrice}`);
+                $(".total-cost").text(`${totalPrice} VND`);
             },
             error: function (err) {
                 console.log(err);
@@ -82,7 +82,7 @@ $(".add-control").on("click", function (e) {
                 const price = $(`.price${id}`).text();
                 const priceNumber = Number(price.split("").splice(1).join(""));
                 const money = amount * priceNumber;
-                $(`.money${id}`).text(`$${money}`);
+                $(`.money${id}`).text(`${money} VND`);
             });
             $(".total-cost");
             // newEl.appendTo($(".some-parent-class"));
@@ -95,10 +95,10 @@ $(".update-bill").on("click", function (e) {
     e.preventDefault();
     const totalCost = Array.from(
         document.querySelectorAll(".moneyline"),
-        (el) => Number(el.textContent.replace("$", ""))
+        (el) => Number(el.textContent.replace("VND", ""))
     ).reduce((sum, val) => sum + val, 0);
 
-    $(".total-cost").text(`$${totalCost}`);
+    $(".total-cost").text(`${totalCost} VND`);
 });
 $(".table-btn").on("click", function (e) {
     e.preventDefault();
@@ -117,9 +117,9 @@ $(".table-btn").on("click", function (e) {
                 val.forEach(function (el) {
                     htmlRow += `<tr id="food_${el.id} food-tr">
                         <td class='product-name'>${el.product_name}</td>
-                        <td class="price${el.id}">$${el.price}</td>
+                        <td class="price${el.id}">${el.price} VND</td>
                         <td><input type="number" class="changeAmount" data-id='${el.id}' min="1" style="width:50%;" value="${el.amount}"></td>
-                        <td class='moneyline money${el.id}'>$${el.total}</td>
+                        <td class='moneyline money${el.id}'>${el.total} VND</td>
                         <td>
                         <button id="12" class="delete-item-food" data-id='${el.id}'>Delete</button>
                         </td>
@@ -147,9 +147,9 @@ $(".table-btn").on("click", function (e) {
             const id = $(this).data("id");
             const amount = $(this).val();
             const price = $(`.price${id}`).text();
-            const priceNumber = Number(price.split("").splice(1).join(""));
+            const priceNumber = Number(price.split(" ").splice(0)[0]);
             const money = amount * priceNumber;
-            $(`.money${id}`).text(`$${money}`);
+            $(`.money${id}`).text(`${money} VND`);
         });
     });
 });

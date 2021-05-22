@@ -33,7 +33,7 @@
                     <div class="add-cart-btn slider__btn">
                         <button class="data__btn slider__btn-add addcart"
                         data-id="{{$product->id}}" data-url="{{route('customer.add.cart',$product->id)}}">ADD TO CART</button>
-                        <Span class="data__price slider__btn-price">From ${{$product->price}}</Span>
+                        <Span class="data__price slider__btn-price"> {{number_format($product->price)}} VND</Span>
                     </div>
                 </div>
             </div>

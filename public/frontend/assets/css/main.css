@@ -423,7 +423,7 @@
 .data__price {
     position: absolute;
     padding: 0 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     /* margin: 0.5rem auto; */
     left: 58%;
     height: 4.8rem;

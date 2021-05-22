@@ -22,8 +22,16 @@ class OrderController extends Controller
 
     public function index(){
         $bills = $this->bill->with('user','paymentt')->get();
-
-        return view('admin.orders.index',compact('bills'));
+        $status_suceess = $this->bill->where('status',2)->get();
+        $status_wait = $this->bill->where('status',0)->get();
+        $status_out = $this->bill->where('status',1)->get();
+        $revenue = $this->bill->sum('total_price');
+        $count = [
+            count($status_suceess),
+            count($status_wait),
+            count($status_out),
+        ];
+        return view('admin.orders.index',compact('bills','count','revenue'));
     }
 
     public function edit($id){

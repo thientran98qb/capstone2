@@ -40,15 +40,16 @@
                         <div class="menu__list-item">
                             <div class="row">
                                 <div class="col l-6 m-6 c-6 menu-list-left">
-                                    <a href="#">
+                                    <a href="{{route('customer.product.index',$product->id)}}">
                                         <h6>{{$product->product_name}}</h6>
                                         <span>Beef, cheese, potato, onion, fries</span>
                                     </a>
                                 </div>
                                 <div class="col l-6 m-6 c-6 menu-list-right">
                                     <span class="menu-price">
-                                        ${{$product->price}}
+                                        {{number_format($product->price)}} VND
                                     </span>
+
                                     <button class="data__btn menu-btn">ADD TO CART</button>
                                 </div>
                             </div>

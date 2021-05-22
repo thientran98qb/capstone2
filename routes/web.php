@@ -177,3 +177,8 @@ Route::middleware(['staff-login'])->group(function () {
     Route::get('/save','StaffController@saveBill')->name('bill.save');
 
 });
+
+Route::get('/runpy','HomeController@runPython')->name('run.py');
+
+Route::get('notification/markAsRead/{id}/{type}', 'NotificationController@markAsRead');
+Route::get('notification/markAllAsRead/{type}', 'NotificationController@markAllAsRead');

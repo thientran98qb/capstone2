@@ -89,7 +89,7 @@ class StaffController extends Controller
         $total_bill = $request->total_bill;
         $table_id = session()->has('table_id') ? session()->get('table_id') : '';
         $dt = Carbon::now();
-        Bill::create([
+        $bill =Bill::create([
             'user_id' => Auth::user()->id,
             'date_order' => $dt->toDateTimeString(),
             'phone_number' => '0815858468',
@@ -99,6 +99,7 @@ class StaffController extends Controller
         ]);
         DB::table('table_products')->where('table_id',$table_id)->delete();
         session()->forget('table_id');
+        NotificationController::notifyNewBillOrder($bill->id);
         return redirect()->route('staff');
     }
 }

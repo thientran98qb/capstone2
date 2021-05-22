@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationController;
 use App\Model\Bill;
 use App\Model\Payment;
 use Exception;
@@ -121,6 +122,7 @@ class PaymentVnpayController extends Controller
                 ];
                 Payment::create($dataPayment);
                 DB::commit();
+                NotificationController::notifyNewBillOrder($bill->id);
                 return view('customers.vnpay.vnpay_return',compact('vnpayData'));
             }catch(Exception $exeption){
                 $request->session()->flash('error','Have error');

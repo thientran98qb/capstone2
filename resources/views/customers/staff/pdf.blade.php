@@ -80,8 +80,8 @@
                                         <td class="center">{{$key+1}}</td>
                                         <td class="left">{{ $bill->product_name }}</td>
                                         <td>{{$bill->pivot->amount}}</td>
-                                        <td class="right">${{$bill->price}}</td>
-                                        <td class="right">${{$bill->pivot->total}}</td>
+                                        <td class="right">{{number_format($bill->price)}} VND</td>
+                                        <td class="right">{{number_format($bill->pivot->total)}} VND</td>
                                     </tr>
                                     @endforeach
 
@@ -101,19 +101,19 @@
                                                     $total+= $product->pivot->total;
                                                 }
                                             @endphp
-                                            <td class="right">${{$total}}</td>
+                                            <td class="right">{{number_format($total)}} VND</td>
                                         </tr>
                                         <tr>
                                             <td class="left"><strong>Discount (20%)</strong></td>
-                                            <td class="right">$0</td>
+                                            <td class="right">0 VND</td>
                                         </tr>
                                         <tr>
                                             <td class="left"><strong>VAT (10%)</strong></td>
-                                            <td class="right">${{ $total * 10/100 }}</td>
+                                            <td class="right">{{number_format( $total * 10/100)}} VND</td>
                                         </tr>
                                         <tr>
                                             <td class="left"><strong>Total</strong></td>
-                                            <td class="right"><strong>${{ $total *90/100 }}</strong></td>
+                                            <td class="right"><strong>{{number_format( $total *90/100)}} VND</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationController;
 use App\Http\Requests\OrderRequest;
 use App\Jobs\SendBillMail;
 use App\Mail\WelcomeEmail;
@@ -109,6 +110,7 @@ class CheckoutController extends Controller
             // dispatch(new SendBillMail($billEmail,$name));
             session()->forget('cart');
             session()->forget('coupon');
+            NotificationController::notifyNewBillOrder($bill->id);
             return redirect()->back()->with('success',' Bạn đã đặt hàng thành công! Chúng tôi sẽ gửi email xác nhận ngay lập tức');
         }
 

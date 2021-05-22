@@ -64,70 +64,26 @@
                 <h6 class="popular__desc">Clients’ Most Popular Choise</h6>
                 <div class="grid wide">
                     <div class="row">
+                        @foreach ($product_last as $item)
                         <div class="col l-3 m-4 c-12">
                             <div class="popular__list">
-                                <img src="{{asset('frontend/assets/img/item1.jpg')}}" alt="" class="list__img">
+                                <a href="{{route('customer.product.index',$item->id)}}"> <img src="{{$item->product_image}}" alt="" class="list__img"></a>
+
                                 <div class="list__data">
                                     <a href="#" class="data__category">Fish</a>
                                     <h3 class="data__name">
-                                        Pizza Margherita
+                                        {{$item->product_name}}
                                     </h3>
                                     <p class="data__desc">With basil, mozzarella, tomatoes</p>
                                     <div class="add-cart-btn">
-                                        <button class="data__btn">ADD TO CART</button>
-                                        <Span class="data__price">From $9.98</Span>
+                                        <button class="data__btn addcart" data-id="{{$item->id}}" data-url="{{route('customer.add.cart',$item->id)}}">ADD TO CART</button>
+                                        <Span class="data__price">{{number_format($item->price)}} VND</Span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col l-3 m-4 c-12">
-                            <div class="popular__list">
-                                <img src="{{asset('frontend/assets/img/item2.jpg')}}" alt="" class="list__img">
-                                <div class="list__data">
-                                    <a href="#" class="data__category">Fish</a>
-                                    <h3 class="data__name">
-                                        Pizza Margherita
-                                    </h3>
-                                    <p class="data__desc">With basil, mozzarella, tomatoes</p>
-                                    <div class="add-cart-btn">
-                                        <button class="data__btn">ADD TO CART</button>
-                                        <Span class="data__price">From $9.98</Span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-4 c-12">
-                            <div class="popular__list">
-                                <img src="{{asset('frontend/assets/img/item3.jpg')}}" alt="" class="list__img">
-                                <div class="list__data">
-                                    <a href="#" class="data__category">Fish</a>
-                                    <h3 class="data__name">
-                                        Pizza Margherita
-                                    </h3>
-                                    <p class="data__desc">With basil, mozzarella, tomatoes</p>
-                                    <div class="add-cart-btn">
-                                        <button class="data__btn">ADD TO CART</button>
-                                        <Span class="data__price">From $9.98</Span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col l-3 m-0 c-0">
-                            <div class="popular__list">
-                                <img src="{{asset('frontend/assets/img/item1.jpg')}}" alt="" class="list__img">
-                                <div class="list__data">
-                                    <a href="#" class="data__category">Fish</a>
-                                    <h3 class="data__name">
-                                        Pizza Margherita
-                                    </h3>
-                                    <p class="data__desc">With basil, mozzarella, tomatoes</p>
-                                    <div class="add-cart-btn">
-                                        <button class="data__btn">ADD TO CART</button>
-                                        <Span class="data__price">From $9.98</Span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -147,7 +103,7 @@
                             <div class="col l-4 m-4 c-12">
                                 <div class="popular__list">
                                     <a href="{{route('customer.product.index',$product->id)}}">
-                                        <img src="{{$product->product_image}}" alt="" class="list__img">
+                                        <img src="{{$product->product_image}}" alt="" class="list__img" style="max-width: 100%;height:300px">
                                     </a>
                                     <div class="newlist__data">
                                         <a href="#" class="data__category">{{$product->category->category_name}}</a>
@@ -158,7 +114,7 @@
                                         <p class="data__desc">With basil, mozzarella, tomatoes</p>
                                         <div class="add-cart-btn">
                                             <button class="data__btn addcart" data-id="{{$product->id}}" data-url="{{route('customer.add.cart',$product->id)}}">ADD TO CART</button>
-                                            <Span class="data__price">From ${{$product->price}}</Span>
+                                            <Span class="data__price">{{number_format($item->price)}} VND</Span>
                                         </div>
                                     </div>
                                 </div>
@@ -182,53 +138,22 @@
 
                             <ul class="controls">
                                 <li class="buttons button-active" data-filter="all">all</li>
-                                <li class="buttons" data-filter="sushi">Sushi</li>
-                                <li class="buttons" data-filter="pizza">Pizza</li>
-                                <li class="buttons" data-filter="juice">Juice</li>
-                                <li class="buttons" data-filter="pasta">Pasta</li>
+                                @foreach ($categories as $category)
+                                <li class="buttons" data-filter="sushi">{{$category->category_name}}</li>
+                                @endforeach
+
+
                             </ul>
 
                             <div class="image-container">
-
+                                @foreach ($product_all as $item)
                                 <div class="image sushi">
-                                    <img src="{{asset('frontend/assets/img/item1.jpg')}}" alt="">
-                                    <a href="#">Sushi</a>
+                                    <img src="{{ $item->product_image }}" alt="">
+                                    <a href="{{route('customer.product.index',$item->id)}}">{{ $item->product_name }}</a>
                                 </div>
-                                <div class="image sushi">
-                                    <img src="{{asset('frontend/assets/img/item1.jpg')}}" alt="">
-                                    <a href="#">Sushi</a>
-                                </div>
-                                <div class="image sushi">
-                                    <img src="{{asset('frontend/assets/img/item1.jpg')}}" alt="">
-                                    <a href="#">Sushi</a>
-                                </div>
+                                @endforeach
 
-                                <div class="image pizza">
-                                    <img src="{{asset('frontend/assets/img/item2.jpg')}}" alt="">
-                                    <a href="#">Pizza</a>
-                                </div>
-                                <div class="image pizza">
-                                    <img src="{{asset('frontend/assets/img/item2.jpg')}}" alt="">
-                                    <a href="#">Pizza</a>
-                                </div>
-                                <div class="image pizza">
-                                    <img src="{{asset('frontend/assets/img/item2.jpg')}}" alt="">
-                                    <a href="#">Pizza</a>
-                                </div>
 
-                                <div class="image juice">
-                                    <img src="{{asset('frontend/assets/img/juice1.jpg')}}" alt="">
-                                    <a href="#">juice</a>
-                                </div>
-                                <div class="image juice">
-                                    <img src="{{asset('frontend/assets/img/juice1.jpg')}}" alt="">
-                                    <a href="#">juice</a>
-                                </div>
-
-                                <div class="image pasta">
-                                    <img src="{{asset('frontend/assets/img/item3.jpg')}}" alt="">
-                                    <a href="#">Pasta</a>
-                                </div>
 
                                 <a href="./menu.html" class="about__btn full-menu-btn">
                                     <span>View full menu</span>

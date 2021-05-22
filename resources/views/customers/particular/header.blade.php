@@ -6,7 +6,7 @@
             </a>
             <ul class="header__nav">
                 <li class="header__nav--item">
-                    <a class="header__nav--link" href="/">Home</a>
+                    <a class="header__nav--link" href="{{route('run.py')}}">Home</a>
                 </li>
                 <li class="header__nav--item">
                     <a class="header__nav--link" href="{{ route('customer.menu.index')}}">Menu</a>
@@ -65,11 +65,11 @@
                     <form action="{{ route('customer.customer.search') }}" method="get">
                         @csrf
                         <input type="text" name="" class="search-txt search-txt-width" placeholder="Search..."/>
-                            <button class="search-btn" type="submit">
-
-                                <i class="fas fa-search"></i>
-                            </button>
+                        <button class="search-btn" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </form>
+
                 </div>
                 <!-- search  -->
                 @include('customers.particular.cart')
