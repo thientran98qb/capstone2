@@ -50,6 +50,7 @@ Route::group(['middleware' => 'locale'], function() {
                 Route::get('/product/delete/{id}', 'ProductController@delete')->name('delete_product');
                 Route::post('/UploadNewsPhoto','ProductController@UploadNewsPhoto');
             });
+            Route::get('/chart', 'ChartController@index')->name('chart');
             Route::prefix('slide')->group(function(){
                 Route::get('','SliderController@index')->name('slide.index');
                 Route::get('/add','SliderController@create')->name('slide.create');

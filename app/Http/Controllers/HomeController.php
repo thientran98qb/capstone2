@@ -48,7 +48,7 @@ class HomeController extends Controller
     }
 
     public function runPython(){
-        $process = new Process('python3 /home/dinhthien/DEV/LARAVEL/Python/test.py 2>&1');
+        $process = new Process('/usr/bin/python3 /home/dinhthien/DEV/LARAVEL/Python/connect_mysql.py');
         $process->run();
 
         if (!$process->isSuccessful()) {
