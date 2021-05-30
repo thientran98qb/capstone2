@@ -85,7 +85,7 @@
                                 </li>
                                 @endif
                                 <li class="header__subnav--item">
-                                    <a href="">Profile</a>
+                                    <a href="{{route('customer.profile.index')}}">Profile</a>
                                 </li>
                                 <li class="header__subnav--item">
                                     <a href="{{ route('past.order.table') }}">Order Table</a>

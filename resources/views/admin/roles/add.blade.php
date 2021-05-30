@@ -20,10 +20,16 @@
                         <label for="">Ten vai tro</label>
                         <input type="text" placeholder="name role" name="name_role" class="form-control">
                     </div>
+                    @error('name_role')
+                    <div class="alert alert-danger col-md-4">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
                         <label for="">Mo ta vai tro</label>
                         <textarea name="desc_role" id="" class="form-control" cols="20" rows="10"></textarea>
                     </div>
+                    @error('desc_role')
+                    <div class="alert alert-danger col-md-4">{{ $message }}</div>
+                    @enderror
                     <label for="check_all">
                         <input type="checkbox" name="" class="checkall" id="check_all">
                         Check all

@@ -94,7 +94,7 @@
 }
 
 .bg-img {
-    background-image: url("img/menu-burgers.jpg");
+    background-image: url("/public/frontend/assets/img/menu-burgers.jpg");
 }
 
 .pz-img {
@@ -102,15 +102,15 @@
 }
 
 .ss-img {
-    background-image: url(/assets/img/ss-img.jpg);
+    background-image: url("/public/frontend/assets//assets/img/ss-img.jpg");
 }
 
 .ds-img {
-    background-image: url(/assets/img/ds-img.jpg);
+    background-image: url("/public/frontend/assets//assets/img/ds-img.jpg");
 }
 
 .dr-img {
-    background-image: url(/assets/img/dr-img.jpg);
+    background-image: url("/public/frontend/assets//assets/img/dr-img.jpg");
 }
 .menu__top-img img {
     position: absolute;

@@ -33,9 +33,10 @@
                             {{ $voucher->type }}
                         </td>
                         <td>
-                            {{ $voucher->percent_off }}
+                            {{ $voucher->percent_off }}%
                         </td>
                         <td>
+                            <a href="{{ route('admin.voucher.edit',$voucher->id) }}" class="btn btn-success">Edit</a>
                         <form action="{{ route('admin.voucher.delete',$voucher->id) }}" method="POST" onsubmit="return confirm('Do you want to delete?');">
                             @csrf
                             <input class='btn btn-danger text-white' type="submit" value="Delete">

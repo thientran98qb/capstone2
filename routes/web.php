@@ -102,6 +102,8 @@ Route::group(['middleware' => 'locale'], function() {
 
                 Route::get('/add','VoucherController@create')->name('voucher.create');
                 Route::post('/add','VoucherController@store')->name('voucher.store');
+                Route::get('/edit/{id}','VoucherController@edit')->name('voucher.edit');
+                Route::post('/update/{id}','VoucherController@update')->name('voucher.update');
                 Route::post('/delete/{id}','VoucherController@delete')->name('voucher.delete');
 
             });
@@ -141,6 +143,9 @@ Route::group(['middleware' => 'locale'], function() {
         Route::get('/search','ProductController@searchIndex')->name('customer.search');
         Route::get('/searchitem','ProductController@search')->name('search');
         Route::middleware(['auth'])->group(function () {
+            Route::get('/profile','ProfileController@index')->name('profile.index');
+            Route::post('/profile/changeAvatar','ProfileController@updateAvatar')->name('profile.avatar');
+            Route::post('/profile/changePass','ProfileController@updatePassword')->name('profile.pass');
             Route::post('/product/comment','ProductController@getComment')->name('product.commet');
             Route::post('comment/update', 'ProductController@update')->name('comment.update');
     Route::delete('comment/destroy', 'ProductController@destroy')->name('comment.destroy');
