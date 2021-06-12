@@ -14,9 +14,9 @@
                 <li class="header__nav--item">
                     <a class="header__nav--link" href="{{ route('book.table') }}">Book a table</a>
                 </li>
-                <li class="header__nav--item">
+                {{-- <li class="header__nav--item">
                     <a class="header__nav--link" href="{{route('customer.about.index')}}">About</a>
-                </li>
+                </li> --}}
                 <li class="header__nav--item">
                     <a class="header__nav--link" href="{{route('customer.contact.index')}}">Contract</a>
                 </li>
@@ -76,7 +76,7 @@
                 @if (auth()->user())
                 <div class="user">
                     <ul class="header__nav">
-                        <li class="header__nav--item">
+                        <li class="header__nav--item" style="margin-left: 0">
                             <i class="icon-user fas fa-user"></i>{{auth()->user()->name}}
                             <ul class="header__subnav">
                                 @if (Auth()->user()->checkRole('staff') == true)

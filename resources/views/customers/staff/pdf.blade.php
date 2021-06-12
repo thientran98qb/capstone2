@@ -54,12 +54,8 @@
                     <div class="card-body">
                         <div class="row mb-4">
                             <div class="col-sm-4">
-                                <h6 class="mb-3">From:</h6>
-                                <div><strong>BBBootstrap Inc.</strong></div>
-                                <div>546 Aston Avenue</div>
-                                <div>NYC, NY 12394</div>
-                                <div>Email: contact@bbbootstrap.com</div>
-                                <div>Phone: +1 848 389 9289</div>
+                                <div><strong>{{Auth::user()->name}}</strong></div>
+                                <div>Email: {{Auth::user()->email}}</div>
                             </div>
 
                         </div>

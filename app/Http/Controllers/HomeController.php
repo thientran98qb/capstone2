@@ -48,15 +48,15 @@ class HomeController extends Controller
     }
 
     public function runPython(){
-        $process = new Process('/usr/bin/python3 /home/dinhthien/DEV/LARAVEL/Python/connect_mysql.py');
+        $process = new Process('/usr/bin/python3 /home/dinhthien/DEV/LARAVEL/Python/aspect-based.py');
         $process->run();
 
-        if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
-        }
+        // if (!$process->isSuccessful()) {
+        //     throw new ProcessFailedException($process);
+        // }
 
-        $data = $process->getOutput();
+        // $data = $process->getOutput();
 
-        dd($data);
+        // dd($data);
     }
 }

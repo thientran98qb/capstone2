@@ -18,6 +18,10 @@
 }
 .card-img {
     background: url("/assets/img/card-img.jpg") center/cover no-repeat;
+    height: 500px;
+}
+.card-img img {
+    height: 330px;
 }
 .banner h2 {
     font-size: 3rem;

@@ -155,7 +155,7 @@
 
 
 
-                                <a href="./menu.html" class="about__btn full-menu-btn">
+                                <a href="{{ route('customer.menu.index') }}" class="about__btn full-menu-btn">
                                     <span>View full menu</span>
                                 </a>
                             </div>
